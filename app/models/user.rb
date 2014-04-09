@@ -1,0 +1,37 @@
+class User < ActiveRecord::Base
+  attr_reader :password
+  validates :first_name, :last_name, :zip_code, :email, :session_token, presence: true
+  validates :email, uniqueness: true
+  validates :password, presence: true, on: :create
+  validates :password, length: {minimum: 6, allow_nil: true}
+  before_validation :ensure_session_token
+  
+  def password=(pt)
+    @password = pt
+    self.password_digest = BCrypt::Password.create(pt)
+  end
+
+  def is_password?(pt)
+    BCrypt::Password.new(self.password_digest).is_password?(pt)
+  end
+
+  def self.find_by_credentials(params)
+    user = User.find_by(email: params[:email])
+    user.try(:is_password?, params[:password]) ? user :nil
+  end
+
+  def self.generate_session_token
+    SecureRandom::urlsafe_base64
+  end
+
+  def reset_session_token!
+    self.session_token = self.class.generate_session_token
+    self.save!
+    self.session_token
+  end
+
+  private
+  def ensure_session_token
+    self.session_token ||= self.class.generate_session_token
+  end
+end
