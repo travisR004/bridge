@@ -9,6 +9,7 @@ gem 'thin'
 gem 'annotate'
 gem 'pry-rails'
 gem 'jquery-ui-rails'
+gem 'backbone-on-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

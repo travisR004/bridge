@@ -11,3 +11,27 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap";
+
+body {
+	font-family: proxima-nova;
+}
+
+.btn-primary {
+	background-color: rgba(122, 220, 255, .7);
+	color: black;
+}
+
+.navbar {
+	height: 125px;
+	font-size: 28px;
+	background-color: #fff;
+	ul {
+		float: right;
+	}
+}
+
+.navbar-header {
+	float: none;
+}
