@@ -1,0 +1,65 @@
+<div class="row">
+	<div class="col-md-3"></div>
+		<div class="col-md-6" id="launch-container">
+<img src="/assets/bridge_logo.jpeg"/>
+<h2>Begin Building Now</h2>
+<h3>bridge(n): structure allowing passage across obstacle, provides a link, connection, or means of coming together</h3>
+	<button class="btn btn-primary btn-oval" data-toggle='modal' data-target="#login-modal">
+		Sign In
+	</button>
+	<button class="btn btn-primary btn-oval" data-toggle='modal' data-target="#signup-modal">
+		Sign Up
+	</button>
+	
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h2 class="modal-title" id="myModalLabel">Welcome Back!</h2>
+        </div>
+        <div class="modal-body">
+					<form id="sign-in" autocomplete="off">
+						<div class="input-group">
+							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
+						  <input id="email"  class="form-control login" type="text" name="user[email]" placeholder="Email.." autocomplete="false">
+						</div>
+
+						<div class="input-group">
+							<span class="input-group-addon glyphicon glyphicon-lock" style="top: 0px"></span>
+						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
+						</div>
+
+					  <button class="btn btn-primary btn-oval">Sign In</button>
+					</form>
+        </div>
+      </div>
+    </div>
+  </div>
+	
+	<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h2 class="modal-title" id="myModalLabel">Welcome to Bridge!</h2>
+        </div>
+        <div class="modal-body">
+					<form id="sign-up" autocomplete="off">
+						<div class="input-group">
+							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
+						  <input id="email"  class="form-control login" type="text" name="user[email]" placeholder="Email..">
+						</div>
+
+						<div class="input-group">
+							<span class="input-group-addon glyphicon glyphicon-lock" style="top: 0px"></span>
+						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
+						</div>
+
+					  <button class="btn btn-primary btn-oval">Sign Up</button>
+					</form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

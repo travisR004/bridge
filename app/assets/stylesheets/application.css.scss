@@ -13,14 +13,31 @@
  */
 
 @import "bootstrap";
-
+$light-blue: #7adcff;
 body {
 	font-family: proxima-nova;
 }
 
+textarea {
+	width: 100%;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+}
+
+h2 {
+	font-size: 36px;
+	color: gray;
+}
+
+.form-control{
+	padding-top: 2px;
+	height: 37px;
+}
 .btn-primary {
-	background-color: rgba(122, 220, 255, .7);
-	color: black;
+	background-color: $light-blue;
+	font-style: bold;
+	border-color: $light-blue;
 }
 
 .navbar {
@@ -34,4 +51,30 @@ body {
 
 .navbar-header {
 	float: none;
+}
+
+.hide-header{
+	display: none
+}
+
+#launch-container{
+	text-align: center;
+}
+
+.input-group-addon{
+  color: white;
+  background-color: $light-blue;
+}
+
+.input-group{
+	margin: 0px 25px 10px 25px;
+}
+.login{
+	font-size: 24px;
+}
+
+.btn-oval {
+	font-size: 20px;
+	border-radius: 20px;
+	width: 150px;
 }

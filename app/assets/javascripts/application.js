@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require serialize_json
 //= require underscore
 //= require backbone
 //= require bridge

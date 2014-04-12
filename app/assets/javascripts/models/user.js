@@ -1,3 +1,3 @@
 window.Bridge.Models.User = Backbone.Model.extend({
-	rootUrl: "/api/users"
+	urlRoot: "/api/users"
 })

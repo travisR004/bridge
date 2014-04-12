@@ -1,10 +1,30 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  first_name      :string(255)
+#  last_name       :string(255)
+#  zip_code        :integer
+#  interest        :text
+#  created_at      :datetime
+#  updated_at      :datetime
+#  session_token   :string(255)
+#  password_digest :string(255)
+#  email           :string(255)
+#  summary         :text
+#
+
 class User < ActiveRecord::Base
   attr_reader :password
-  validates :first_name, :last_name, :zip_code, :email, :session_token, presence: true
+  validates :email, presence: true
   validates :email, uniqueness: true
   validates :password, presence: true, on: :create
   validates :password, length: {minimum: 6, allow_nil: true}
   before_validation :ensure_session_token
+  
+  has_many :user_join_tags
+  has_many :tags, through: :user_join_tags
   
   def password=(pt)
     @password = pt

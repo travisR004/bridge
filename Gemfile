@@ -10,6 +10,7 @@ gem 'annotate'
 gem 'pry-rails'
 gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
+gem 'serialize_json-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -39,6 +40,10 @@ end
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', require: 'bcrypt'
+ group :development do
+   gem 'better_errors'
+   gem 'binding_of_caller'
+ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
