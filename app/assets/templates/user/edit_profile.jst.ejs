@@ -1,20 +1,32 @@
 <div class="row">
 	<div class="col-sm-12 col-md-6 col-md-offset-3" id="update-profile">
 		<h1>Edit Your Profile</h1>
-
+		
 		<form id="edit-profile">
 			<label>Summary</label>
-			<div class="input-group">
+			<div class="input-group update">
 				<textarea name="user[summary]"><%= user.escape("summary") %></textarea>
 			</div>
 
 			<label>Zipcode</label>
-			<div class="input-group">
-				<input type="text" name="user[zip_code]" placeholder="XXXXX" value="<%= user.escape("zip_code") %>" >
+			<div class="input-group update">
+				<input type="text" name="user[zip_code]" value="<%= user.escape("zip_code") %>" >
 			</div>
-			<button class="btn btn-primary btn-oval">Update</button>
+			
+			<div class="tags">
+				<% savedTags.forEach(function(tag){ %>
+					<p><%= tag.escape("name") %></p>
+				<% }) %>
+			</div>
+			
+			<label>Tags</label>
+			<div class="input-group update">
+				<input type="text" name="user[tags][]" id="tags">
+			</div>
+			<button class="btn btn-primary" id="add-tag">+</button>
+			
+			<button class="btn btn-primary btn-oval">Save Changes</button>
 		</form>
-
 	</div>
 	<div class="col-md-2">
 </div>

@@ -4,7 +4,8 @@ Bridge::Application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :show, :update, :destroy]
-    resources :tags, only: [:index]
+    resources :tags, only: [:index, :create]
+    resources :user_join_tags, only: [:create, :destroy]
   end
 
   resource :session, only: [:new, :create, :destroy]

@@ -6,14 +6,20 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	},
 	
 	editProfile: function(){
-		var user = Bridge.Data.users.getOrFetch(currentUserId);
-		var editProfileView = new Bridge.Views.editProfile({model: user})
-		this._swapView(editProfileView)
+		if(currentUserId){
+			var tags = Bridge.Data.tags
+			tags.fetch()
+			var user = Bridge.Data.users.getOrFetch(currentUserId);
+			var editProfileView = new Bridge.Views.editProfile({model: user, tags: tags})
+			this._swapView(editProfileView)
+		} else {
+			this.index()
+		}
 	},
 	
 	index: function(){
 		if (currentUserId){
-			
+			this.profile()
 		}
 		else{
 			var indexView = new Bridge.Views.Launch()
@@ -23,10 +29,11 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	
 	profile: function(){
 		if (currentUserId){
-			var tags = Bridge.Data.tags.fetch()
 			var user = Bridge.Data.users.getOrFetch(currentUserId)
-			var profileView = new Bridge.Views.Profile({model: user, tags: tags})
+			var profileView = new Bridge.Views.Profile({model: user})
 			this._swapView(profileView)
+		} else {
+			this.index()
 		}
 	},
 	

@@ -3,3 +3,11 @@
 	<div class="summary-container">
 		<%= user.escape("summary") %>
 	</div>
+	
+	<div class="tags">
+		<% tags.forEach(function(tag){ %>
+			<div class="tag-holder">
+				<%= tag.escape("name") %>
+			</div>
+		<% }) %>
+	</div>

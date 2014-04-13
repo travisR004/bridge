@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   
   def show
     @user = current_user
-    render json: @user.includes(:tags)
+    render json: @user.to_json(include: [:tags])
   end
   
   def update
