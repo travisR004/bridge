@@ -1,0 +1,2 @@
+module SkillJoinsHelper
+end
