@@ -14,8 +14,84 @@
 
 @import "bootstrap";
 $light-blue: #7adcff;
+
 body {
-	font-family: proxima-nova;
+	font-family: verdana;
+}
+
+h1 {
+	font-family: verdana;
+	font-size: 5.2em;
+	line-height: 2.0em;
+	font-weight: 200;
+	font-style: normal;
+	max-width: 100%;
+	text-align: center;
+}
+
+h2, h3, h4 {
+	margin: 0 auto;
+	margin-top: 8%;
+	font-size: 4.2em;
+	text-align: center;
+}
+
+h3 {
+font-size: 3.2em;
+}
+
+h4 {
+	font-size: 2.8em;
+}
+
+form{
+	text-align: center;
+}
+
+.body-wrapper{
+	margin-top: 150px;
+}
+
+.navbar {
+	height: 125px;
+	font-size: 28px;
+	background-color: #fff;
+	ul {
+		float: right;
+		background: white;
+	}
+	margin-bottom: 0px;
+	
+	.navbar-brand{
+		img{
+			width: 182px;
+			height: 100px;
+		}
+	}
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #777777;
+	font-size: 44px;
+	border-right: solid
+}
+
+.headline-image, .image-wrapper{
+	width: 100%;
+	height: auto;
+}
+
+.no-image{
+	min-height: 600px;
+}
+
+.image-overlay{	
+	position: absolute;
+	top: 45%;
+	left: 25%;
+	background: white;
+	width: auto;
+	height: 25%;
 }
 
 textarea {
@@ -23,11 +99,6 @@ textarea {
 	height: 120px;
 	border: 3px solid #cccccc;
 	padding: 5px;
-}
-
-h2 {
-	font-size: 36px;
-	color: gray;
 }
 
 .form-control{
@@ -38,15 +109,6 @@ h2 {
 	background-color: $light-blue;
 	font-style: bold;
 	border-color: $light-blue;
-}
-
-.navbar {
-	height: 125px;
-	font-size: 28px;
-	background-color: #fff;
-	ul {
-		float: right;
-	}
 }
 
 .navbar-header {
@@ -77,4 +139,44 @@ h2 {
 	font-size: 20px;
 	border-radius: 20px;
 	width: 150px;
+}
+
+@media (max-width: 900px){
+	h1 {
+		font-size: 4.0em;
+	}
+}
+
+@media(max-width: 768px){
+	h1 {
+		font-size: 24px;
+	}
+	h2 {
+		font-size: 22px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	
+	.body-wrapepr{
+		margin-top: 75px;
+	}
+	
+	.navbar-default .navbar-nav > li > a {
+		font-size: 24px;	
+	}
+	
+	.navbar{
+		height: 75px;
+		ul {
+			float: right;
+			background: white;
+		}
+		.navbar-brand{
+			img{
+				width: 91px;
+				height: 50px;
+			}
+		}
+	}
 }

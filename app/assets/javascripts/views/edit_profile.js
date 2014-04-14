@@ -19,7 +19,7 @@ window.Bridge.Views.editProfile = Backbone.View.extend({
 		var that = this;
 		var tagName = $("#tags").val();
 		tagName = tagName.charAt(0).toUpperCase() + tagName.slice(1);
-		$(".tags").append(tagName);
+		$(".edit-tags").append(tagName);
 		var tagModel = new Bridge.Models.Tag();
 		tagModel.save({name: tagName}, {
 			success: function(resp){

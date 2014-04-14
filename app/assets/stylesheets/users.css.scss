@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$light-blue: #7adcff;
 
 #update-profile{
 	text-align: center;
@@ -12,11 +13,34 @@
 	width: 100%;
 }
 
-.summary-container {
+#tags {
+	margin-right: 10px;
+}
+
+#add-tag{
+	height: 30px;
+	font-size: 20px;
+	border-radius: 20px;
+	width: 150px;
+}
+
+.summary-container, .tags {
+	font-weight: bold;
 	width: 100%;
-	overflow-y: scroll;
-	height: inherit;
 	border: solid 2px;
+	border-color: $light-blue;
 	border-radius: 5px;
 	padding: 10px;
+	margin: 10px;
+	max-height: 185px;
+	overflow-y: scroll;
+}
+
+.tags {
+	overflow: auto;
+}
+
+.tag-holder {
+	float: left;
+	margin: 5px;
 }

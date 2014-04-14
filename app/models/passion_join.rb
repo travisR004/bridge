@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: user_join_tags
+# Table name: passion_joins
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
@@ -9,7 +9,7 @@
 #  updated_at :datetime
 #
 
-class UserJoinTag < ActiveRecord::Base
-  belongs_to :user
+class PassionJoin < ActiveRecord::Base
   belongs_to :tag
+  belongs_to :user
 end

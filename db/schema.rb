@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412183514) do
+ActiveRecord::Schema.define(version: 20140414151725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "passion_joins", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -32,7 +39,6 @@ ActiveRecord::Schema.define(version: 20140412183514) do
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "zip_code"
     t.text     "interest"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -40,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140412183514) do
     t.string   "password_digest"
     t.string   "email"
     t.text     "summary"
+    t.string   "location"
   end
 
 end

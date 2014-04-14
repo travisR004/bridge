@@ -1,0 +1,29 @@
+// Place all the styles related to the Tags controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$light-blue: #7adcff;
+
+.process, .story {
+	float: left;
+	color: $light-blue;
+	font-weight: bold;
+}
+
+.story {
+	float: right;
+}
+
+.second {
+	max-height: 600px;
+	width: 100%;
+	.image-overlay{
+		height: 30%;
+		padding: 2px;
+	}
+}
+
+.navbar-default .navbar-nav > li > a.last {
+	border-right: none;
+	margin-right: 15px;
+}

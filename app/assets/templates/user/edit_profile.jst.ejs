@@ -8,22 +8,21 @@
 				<textarea name="user[summary]"><%= user.escape("summary") %></textarea>
 			</div>
 
-			<label>Zipcode</label>
+			<label>Location</label>
 			<div class="input-group update">
-				<input type="text" name="user[zip_code]" value="<%= user.escape("zip_code") %>" >
+				<input class="form-control" type="text" name="user[location]" value="<%= user.escape("location") %>" >
 			</div>
 			
-			<div class="tags">
-				<% savedTags.forEach(function(tag){ %>
-					<p><%= tag.escape("name") %></p>
-				<% }) %>
+			<div class="edit-tags">
 			</div>
 			
-			<label>Tags</label>
-			<div class="input-group update">
-				<input type="text" name="user[tags][]" id="tags">
+			<div class="form-group">
+				<label class="control-label">Add Skills or Interests!</label>	
+					<div class="input-group update">
+						<input class="form-control" type="text" name="user[tags][]" id="tags">
+						<span class="input-group-addon btn btn-primary btn-oval" style="top: 0px" id="add-tag">Add</span>
+					</div>
 			</div>
-			<button class="btn btn-primary" id="add-tag">+</button>
 			
 			<button class="btn btn-primary btn-oval">Save Changes</button>
 		</form>
