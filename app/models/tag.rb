@@ -11,6 +11,9 @@
 class Tag < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   
-  has_many :user_join_tags
-  has_many :users
+  has_many :passion_joins
+  has_many :users_with_passion, through: :passion_joins, source: :users
+  
+  has_many :skill_joins
+  has_many :users_with_skill, through: :skill_joins, source: :users
 end

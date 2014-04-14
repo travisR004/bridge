@@ -23,8 +23,10 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   before_validation :ensure_session_token
   
-  has_many :user_join_tags
-  has_many :tags, through: :user_join_tags
+  has_many :passion_joins
+  has_many :passions, through: :passion_joins, source: :tags
+  has_many :skill_joins
+  has_many :skills, through: :skill_joins, source: :tags
   
   def password=(pt)
     @password = pt
