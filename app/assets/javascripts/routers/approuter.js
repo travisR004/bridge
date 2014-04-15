@@ -24,8 +24,10 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	
 	profile: function(){
 		if (currentUserId){
+			var tags = Bridge.Data.tags
+			tags.fetch()
 			var user = Bridge.Data.users.getOrFetch(currentUserId)
-			var profileView = new Bridge.Views.Profile({model: user})
+			var profileView = new Bridge.Views.Profile({model: user, tags: tags})
 			this._swapView(profileView)
 		} else {
 			this.index()

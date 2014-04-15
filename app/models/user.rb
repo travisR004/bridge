@@ -24,9 +24,9 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
   
   has_many :passion_joins
-  has_many :passions, through: :passion_joins, source: :tags
+  has_many :passions, through: :passion_joins, source: :tag
   has_many :skill_joins
-  has_many :skills, through: :skill_joins, source: :tags
+  has_many :skills, through: :skill_joins, source: :tag
   
   def password=(pt)
     @password = pt

@@ -5,7 +5,7 @@ class Api::SkillJoinsController < ApplicationController
     if @skill_join.save
       render json: @skill_join
     else
-      render json: @skill_join.errors.full_messages, status: 402
+      render json: @skill_join.errors.full_messages, status: 422
     end
   end
   

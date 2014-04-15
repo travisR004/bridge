@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       login!
       render json: @user
     else
-      render json: ["Invalid Credentials"], status: 402
+      render json: ["Invalid Credentials"], status: 422
     end
   end
   

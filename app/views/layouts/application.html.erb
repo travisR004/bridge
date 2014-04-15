@@ -10,25 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>	
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bridge-nav-collapse">
-           <span class="sr-only"> Toggle Navigation</span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="#"><img src="/assets/bridge_logo.jpeg"></a>
-      </div>
-	  	<div class="collapse navbar-collapse" id="bridge-nav-collapse">
-	    	<ul class="nav navbar-nav">
-						<li><a href="#" data-toggle='modal' data-target="#login-modal">Log In</a></li>
-						<li><a class="last" href="#" data-toggle='modal' data-target="#signup-modal">Get Access</a></li>
-	        <ul class="dropdown-menu">
-	        </ul>
-		    </ul>
-			</div>
-		</nav>
+	<%= render 'header' %>
 	
 	<%= yield %>
 	
@@ -40,6 +22,7 @@
           <h2 class="modal-title" id="myModalLabel">Welcome Back!</h2>
         </div>
         <div class="modal-body">
+					<div id="login-errors" class="errors"></div>
 					<form id="sign-in" autocomplete="off">
 						<div class="input-group">
 							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
@@ -51,7 +34,7 @@
 						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
 						</div>
 
-					  <button class="btn btn-primary btn-oval" id="sign-in">Sign In</button>
+					  <button class="btn btn-primary btn-oval" id="sign-in-button">Sign In</button>
 					</form>
         </div>
       </div>
@@ -66,6 +49,7 @@
           <h2 class="modal-title" id="myModalLabel">Welcome to Bridge!</h2>
         </div>
         <div class="modal-body">
+					<div class="signup-errors"></div>
 					<form id="sign-up" autocomplete="off">
 						<div class="input-group">
 							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
@@ -77,7 +61,7 @@
 						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
 						</div>
 
-					  <button class="btn btn-primary btn-oval">Sign Up</button>
+					  <button class="btn btn-primary btn-oval" id="sign-up-button">Sign Up</button>
 					</form>
         </div>
       </div>
@@ -85,31 +69,47 @@
   </div>
 	
 	<script>
-	    var currentUserId = <%= current_user ? current_user.id : 0 %>;
-	    $("#sign-in").click( function(event){
-	      event.preventDefault();
-				debugger
-	      var data = $(event.currentTarget).serializeJSON()
-	      $.ajax({
-	        url: 'session',
-	        type: "POST",
-	        data: data,
-	        success:function(resp){
-	          currentUserId = resp.id
-	          $("#login-modal").modal("hide")
-						Backbone.history.navigate("profile", {trigger: true})
-	        },
-	        error: function(response){
-	          response.responseJSON.forEach(function(response){
-	            $("#login-errors").append("<p>- " + response + "</p>")
-	          })
-	        }
-	      })
-	    })
-	  </script>
-	
-	
-	
-	
+    var currentUserId = <%= current_user ? current_user.id : 0 %>;
+    $("#sign-in-button").click( function(event){
+      event.preventDefault();
+      var data = $(event.currentTarget).parent().serializeJSON()
+      $.ajax({
+        url: 'session',
+        type: "POST",
+        data: data,
+        success:function(resp){
+          currentUserId = resp.id
+          $("#login-modal").modal("hide")
+					Backbone.history.navigate("profile", {trigger: true})
+        },
+        error: function(response){
+          response.responseJSON.forEach(function(response){
+            $("#login-errors").html("<p>" + response + "</p>")
+          })
+        }
+      })
+    })
+  </script>
+	<script>
+    $("#sign-up-button").click( function(event){
+      event.preventDefault();
+      var data = $(event.currentTarget).parent().serializeJSON()
+      $.ajax({
+        url: 'api/users',
+        type: "POST",
+        data: data,
+        success:function(resp){
+          currentUserId = resp.id
+          $("#signup-modal").modal("hide")
+					Backbone.history.navigate("profile", {trigger: true})
+        },
+        error: function(response){
+          response.responseJSON.forEach(function(response){
+            $("#signup-errors").html("<p>" + response + "</p>")
+          })
+        }
+      })
+    })
+  </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ class Api::PassionJoinsController < ApplicationController
     if @passion_join.save
       render json: @passion_join
     else
-      render json: @passion_join.errors.full_messages, status: 402
+      render json: @passion_join.errors.full_messages, status: 422
     end
   end
   

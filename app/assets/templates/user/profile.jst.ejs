@@ -10,12 +10,25 @@
 	<div class="row">
 		<div class="col-md-6">
 			<h3>Skills</h3>
-			<div class="tags">
-				<% tags.forEach(function(tag){ %>
+			<div class="tags" id="skill-holder">
+				<% skills.forEach(function(skill){ %>
 					<div class="tag-holder">
-						<%= tag.escape("name") %>
+						<%= skill.escape("name") %>
 					</div>
 				<% }) %>
+				<a href="#" class="add hidden" id="add-skill">Add</a>
+				<input class="form-control hidden" type="text" name="user[passions][]" id="add-skill-form">
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h3>Passions</h3>
+			<div class="tags">
+				<% passions.forEach(function(passion){ %>
+					<div class="tag-holder">
+						<%= passion.escape("name") %>
+					</div>
+				<% }) %>
+				<a href="#" class="add" id="add-passion">Add</a>
 			</div>
 		</div>
 	</div>

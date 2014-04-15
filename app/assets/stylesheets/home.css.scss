@@ -10,6 +10,10 @@ $light-blue: #7adcff;
 	font-weight: bold;
 }
 
+.body-wrapper {
+	margin-top: -75px;
+}
+
 .story {
 	float: right;
 }
@@ -27,3 +31,29 @@ $light-blue: #7adcff;
 	border-right: none;
 	margin-right: 15px;
 }
+
+.bottom-line {
+	margin-top: 5%;
+}
+
+.btn-square {
+	margin-top: 4%;
+	font-size: 1.8em;
+	background: white;
+	border: solid 3px;
+	&:hover{
+		background: black;
+		color: white;
+	}
+}
+
+#live {
+	text-align: left;
+	margin-top: 10px;
+	font-size: 22px;
+}
+
+#live-header {
+	text-align: left;
+}
+

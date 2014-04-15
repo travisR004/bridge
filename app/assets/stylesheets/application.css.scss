@@ -17,6 +17,7 @@ $light-blue: #7adcff;
 
 body {
 	font-family: verdana;
+	padding-top: 75px;
 }
 
 h1 {
@@ -48,8 +49,9 @@ form{
 	text-align: center;
 }
 
-.body-wrapper{
-	margin-top: 150px;
+.errors {
+	text-align: center;
+	color: red;
 }
 
 .navbar {
@@ -79,6 +81,10 @@ form{
 .headline-image, .image-wrapper{
 	width: 100%;
 	height: auto;
+}
+
+#headline{
+	min-height: 600px;
 }
 
 .no-image{
@@ -145,6 +151,9 @@ textarea {
 	h1 {
 		font-size: 4.0em;
 	}
+	#headline{
+		min-height: 400px;
+	}
 }
 
 @media(max-width: 768px){
@@ -157,9 +166,8 @@ textarea {
 	h3 {
 		font-size: 20px;
 	}
-	
-	.body-wrapepr{
-		margin-top: 75px;
+	#headline{
+		min-height: 200px;
 	}
 	
 	.navbar-default .navbar-nav > li > a {
