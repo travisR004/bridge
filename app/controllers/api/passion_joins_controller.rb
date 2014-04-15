@@ -1,6 +1,6 @@
 class Api::PassionJoinsController < ApplicationController
   def create
-    @passion_join = PassionJoin.new(user_join_tag_params)
+    @passion_join = PassionJoin.new(passion_join_params)
     @passion_join.user_id = current_user.id
     if @passion_join.save
       render json: @passion_join

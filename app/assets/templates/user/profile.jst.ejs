@@ -1,35 +1,59 @@
 <div class="col-sm-12 col-md-8 col-md-offset-2" >
 	<div class="row">
 		<div class="col-md-12">
-			<h3>Summary</h3>
+			<h3>Story</h3>
 			<div class="summary-container">
-				<%= user.escape("summary") %>
+				<div id="summary-text">
+					<%= user.escape("summary") %>
+				</div>
+				<div class="add hidden" id="edit-summary">
+					<span class="glyphicon glyphicon-pencil"></span>
+				</div>
+				<form id="edit-summary-form" class="hidden">
+					<textarea name="user[summary]" id="edit-summary-input"><%= user.escape("summary") %></textarea>
+					<button class="btn btn-primary" id="update-summary">Update</button>
+				</form>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6">
-			<h3>Skills</h3>
+		<div class="col-md-12">
+			<h3 class="left">Skills and Expertise</h3>
 			<div class="tags" id="skill-holder">
 				<% skills.forEach(function(skill){ %>
-					<div class="tag-holder">
+					<div class="tag-holder skill">
 						<%= skill.escape("name") %>
 					</div>
 				<% }) %>
-				<a href="#" class="add hidden" id="add-skill">Add</a>
-				<input class="form-control hidden" type="text" name="user[passions][]" id="add-skill-form">
+				<div class="tag-holder skill add hidden" id="add-skill">
+					Add Skill!
+				</div>
+				<form id="add-skill-form" class="hidden">
+					<input class="form-control" type="text" name="user[skills][]" id="add-skill-input">
+					<button class="btn btn-primary" id="submit-skill">Add Skill</button>
+				</form>
 			</div>
+			<div class="errors" id="skill-errors"></div>
 		</div>
-		<div class="col-md-6">
-			<h3>Passions</h3>
-			<div class="tags">
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="left">Passions and Interests</h3>
+			<div class="tags" id="passion-holder">
 				<% passions.forEach(function(passion){ %>
-					<div class="tag-holder">
+					<div class="tag-holder passion">
 						<%= passion.escape("name") %>
 					</div>
 				<% }) %>
-				<a href="#" class="add" id="add-passion">Add</a>
+				<div class="tag-holder passion add hidden" id="add-passion">
+					Add Passion!
+				</div>
+				<form id="add-passion-form" class="hidden">
+					<input class="form-control" type="text" name="user[passions][]" id="add-passion-input">
+					<button class="btn btn-primary" id="submit-passion">Add Passion</button>
+				</form>
 			</div>
+			<div class="errors" id="passion-errors"></div>
 		</div>
 	</div>
 </div>

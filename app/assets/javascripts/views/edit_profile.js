@@ -44,7 +44,7 @@ window.Bridge.Views.editProfile = Backbone.View.extend({
 	},
 	
 	render: function(){
-		var renderedContent = this.template({user: this.model, savedTags: this.model.tags()})
+		var renderedContent = this.template({user: this.model})
 		this.$el.html(renderedContent)
 		this.addSearchableTags()
 		return this

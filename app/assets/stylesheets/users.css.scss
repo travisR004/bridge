@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $light-blue: #7adcff;
+$dark-blue: #02405E;
+$dark-gray: #404040;
 
 #update-profile{
 	text-align: center;
@@ -13,13 +15,11 @@ $light-blue: #7adcff;
 	width: 100%;
 }
 
-.add{
-	float: right;
+
+.left {
+	text-align: left;
 }
 
-#tags {
-	margin-right: 10px;
-}
 
 #add-tag{
 	height: 30px;
@@ -42,9 +42,35 @@ $light-blue: #7adcff;
 
 .tags {
 	overflow: auto;
+	border: none;
 }
 
 .tag-holder {
+	text-align: center;
 	float: left;
-	margin: 5px;
+	width: 25%;
+	padding: 10px;
+	margin-bottom: 5px;
+	color: white;
+	border: solid 2px;
+}
+
+.skill{
+	background: $dark-gray;
+}
+.passion {
+	background: $dark-blue;
+}
+
+
+.add{
+	float: right;
+	color: $dark-gray;
+	background: white;
+	&:hover{
+		cursor: pointer;
+	}
+}
+.add.passion {
+	color: $dark-blue;
 }
