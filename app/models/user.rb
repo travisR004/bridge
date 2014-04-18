@@ -13,6 +13,8 @@
 #  email           :string(255)
 #  summary         :text
 #  location        :string(255)
+#  age             :integer
+#  gender          :string(255)
 #
 
 class User < ActiveRecord::Base

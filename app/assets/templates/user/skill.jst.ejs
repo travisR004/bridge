@@ -1,0 +1,26 @@
+<div class="col-md-12">
+	<h3 class="left">Skills and Expertise</h3>
+	<div class="tags" id="skill-holder">
+		<% if(skills.length < 1){%>
+			<div class="tag-holder skill">
+				Your Skills Will
+			</div>
+			<div class="tag-holder skill">
+				Display Here!
+			</div>
+		<% } %>
+		<% skills.forEach(function(skill){ %>
+			<div class="tag-holder skill">
+				<%= skill.escape("name") %>
+			</div>
+		<% }) %>
+		<div class="tag-holder skill add hidden" id="add-skill">
+			Add Skill!
+		</div>
+		<form id="add-skill-form" class="hidden">
+			<input class="form-control" type="text" name="user[skills][]" id="add-skill-input">
+			<button class="btn btn-primary" id="submit-skill">Add Skill</button>
+		</form>
+	</div>
+	<div class="errors" id="skill-errors"></div>
+</div>

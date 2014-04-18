@@ -1,10 +1,11 @@
 <div class="col-sm-12 col-md-8 col-md-offset-2" >
 	<div class="row">
 		<div class="col-md-12">
-			<h3>Story</h3>
+			<h3 class="left"><%= user.escape("first_name") ? user.escape("first_name") : "Welcome!" %></h3>
 			<div class="summary-container">
 				<div id="summary-text">
-					<%= user.escape("summary") %>
+					
+					<%= user.escape("summary") ? user.escape("summary") : "Tell us about yourself..." %>
 				</div>
 				<div class="add hidden" id="edit-summary">
 					<span class="glyphicon glyphicon-pencil"></span>
@@ -16,44 +17,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3 class="left">Skills and Expertise</h3>
-			<div class="tags" id="skill-holder">
-				<% skills.forEach(function(skill){ %>
-					<div class="tag-holder skill">
-						<%= skill.escape("name") %>
-					</div>
-				<% }) %>
-				<div class="tag-holder skill add hidden" id="add-skill">
-					Add Skill!
-				</div>
-				<form id="add-skill-form" class="hidden">
-					<input class="form-control" type="text" name="user[skills][]" id="add-skill-input">
-					<button class="btn btn-primary" id="submit-skill">Add Skill</button>
-				</form>
-			</div>
-			<div class="errors" id="skill-errors"></div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3 class="left">Passions and Interests</h3>
-			<div class="tags" id="passion-holder">
-				<% passions.forEach(function(passion){ %>
-					<div class="tag-holder passion">
-						<%= passion.escape("name") %>
-					</div>
-				<% }) %>
-				<div class="tag-holder passion add hidden" id="add-passion">
-					Add Passion!
-				</div>
-				<form id="add-passion-form" class="hidden">
-					<input class="form-control" type="text" name="user[passions][]" id="add-passion-input">
-					<button class="btn btn-primary" id="submit-passion">Add Passion</button>
-				</form>
-			</div>
-			<div class="errors" id="passion-errors"></div>
-		</div>
-	</div>
+	<div class="row" id="skill-view-holder"></div>
+	<div class="row" id="passion-view-holder"></div>
+	<div class="row" id="personal-info-holder"></div>
 </div>

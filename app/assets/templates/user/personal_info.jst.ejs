@@ -1,0 +1,22 @@
+<div class="col-md-12">
+	<h3 class="left">Info</h3>
+	<div id="info-holder">
+		<div class="personal" id="first-name">
+			<%= user.escape("first_name") ? user.escape("first_name") : "First Name" %>
+		</div>
+	
+		<div class="personal" id="last-name">
+			<%= user.escape("last_name") ? user.escape("last_name") : "Last Name"%>
+		</div>
+	
+		<div class="personal" id="city">
+			<%= user.escape("location") ? user.escape("location") : "Location"%>
+		</div>
+		<div class="personal" id="age">
+			<%= user.escape("age") ? user.escape("age") : "Age" %>
+		</div>
+	</div>
+	<form class="hidden">
+		
+	</form>
+</div>

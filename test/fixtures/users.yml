@@ -13,6 +13,8 @@
 #  email           :string(255)
 #  summary         :text
 #  location        :string(255)
+#  age             :integer
+#  gender          :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

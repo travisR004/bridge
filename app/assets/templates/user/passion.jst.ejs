@@ -1,0 +1,26 @@
+<div class="col-md-12">
+	<h3 class="left">Passions and Interests</h3>
+	<div class="tags" id="passion-holder">
+		<% if(passions.length < 1){%>
+			<div class="tag-holder passion">
+				Your Passions Will
+			</div>
+			<div class="tag-holder passion">
+				Display Here!
+			</div>
+		<% } %>
+		<% passions.forEach(function(passion){ %>
+			<div class="tag-holder passion">
+				<%= passion.escape("name") %>
+			</div>
+		<% }) %>
+			<div class="tag-holder passion add hidden" id="add-passion">
+				Add Passion!
+			</div>
+		<form id="add-passion-form" class="hidden">
+			<input class="form-control" type="text" name="user[passions][]" id="add-passion-input">
+			<button class="btn btn-primary" id="submit-passion">Add Passion</button>
+		</form>
+	</div>
+	<div class="errors" id="passion-errors"></div>
+</div>
