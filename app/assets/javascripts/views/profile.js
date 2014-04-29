@@ -4,14 +4,11 @@ window.Bridge.Views.Profile = Backbone.CompositeView.extend({
 		this.availableTags = [];
 		this.listenTo(this.model, "sync", this.render);
 		this.listenTo(this.tags, "sync", this.createAvailableTags)
-		this.openSummaryForm = false;
 	},
 	
 	template: JST["user/profile"],
 	
 	events: {
-		"mouseenter .summary-container": "showEditSummaryButton",
-		"mouseleave .summary-container": "hideEditSummaryButton",
 		"click #edit-summary": "revealEditSummaryForm",
 		"blur #edit-summary-input": "hideEditSummaryForm",
 		"mousedown #update-summary": "updateSummary",
@@ -49,7 +46,6 @@ window.Bridge.Views.Profile = Backbone.CompositeView.extend({
 	hideEditSummaryForm: function(){
 		$("#edit-summary-form").addClass("hidden");
 		$("#summary-text").removeClass("hidden")
-		this.openSummaryForm = false;
 	},
 	
 	revealEditSummaryForm: function(){
@@ -57,13 +53,10 @@ window.Bridge.Views.Profile = Backbone.CompositeView.extend({
 		$("#summary-text").addClass("hidden")
 		$("#edit-summary-input").focus();
 		this.hideEditSummaryButton();
-		this.openSummaryForm = true;
 	},
 	
 	showEditSummaryButton: function(){
-		if(!this.openSummaryForm){
-			$("#edit-summary").removeClass("hidden")
-		}
+		$("#edit-summary").removeClass("hidden")
 	},
 	
 	hideEditSummaryButton: function(){

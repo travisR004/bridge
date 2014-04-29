@@ -7,6 +7,7 @@ Bridge::Application.routes.draw do
     resources :tags, only: [:index, :create]
     resources :passion_joins, only: [:create, :destroy]
     resources :skill_joins, only: [:create, :destroy]
+    resources :projects, only: [:create, :show, :update, :destroy]
   end
 
   resource :session, only: [:new, :create, :destroy]

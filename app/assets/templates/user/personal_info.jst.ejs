@@ -1,22 +1,65 @@
 <div class="col-md-12">
 	<h3 class="left">Info</h3>
 	<div id="info-holder">
-		<div class="personal" id="first-name">
-			<%= user.escape("first_name") ? user.escape("first_name") : "First Name" %>
+		<div id="personal-info">
+			<div class="personal" id="first-name">
+				<%= user.escape("first_name") ? user.escape("first_name") : "First Name" %>
+			</div>
+	
+			<div class="personal" id="last-name">
+				<%= user.escape("last_name") ? user.escape("last_name") : "Last Name"%>
+			</div>
+	
+			<div class="personal" id="city">
+				<%= user.escape("location") ? user.escape("location") : "Location"%>
+			</div>
+			<div class="personal" id="age">
+				<%= user.escape("age") ? user.escape("age") : "Age" %>
+			</div>
+			<button class="btn btn-primary add" id="edit-info">Edit Info</button>
 		</div>
 	
-		<div class="personal" id="last-name">
-			<%= user.escape("last_name") ? user.escape("last_name") : "Last Name"%>
-		</div>
-	
-		<div class="personal" id="city">
-			<%= user.escape("location") ? user.escape("location") : "Location"%>
-		</div>
-		<div class="personal" id="age">
-			<%= user.escape("age") ? user.escape("age") : "Age" %>
-		</div>
-	</div>
-	<form class="hidden">
+		<form class="hidden" id="personal-info-form">
+				<input
+					type="text"
+					placeholder="First Name..."
+					value="<%= user.escape("first_name") %>"
+					name="user[first_name]"
+					class="form-control"
+					id="personal-info-focus"
+				>
+				
+				<input
+					type="text"
+					placeholder="Last Name..."
+					value="<%= user.escape("last_name") %>"
+					name="user[last_name]"
+					class="form-control"
+				>
 		
-	</form>
+				<input
+					type="text"
+					placeholder="location"
+					value="<%= user.escape("location") %>"
+					name="user[location]"
+					class="form-control"
+				>
+				
+				<input
+					type="number"
+					value="<%= user.escape('age') %>"
+					placeholder="Age"
+					name="user[age]"
+					class="form-control"
+				>
+
+
+					<select class="form-control">
+						<option name="user[gender]" value="Male">Male</option>
+						<option name="user[gender]" value="Female">Female</option>
+					</select>
+
+				<button class="btn btn-primary" id="update-info">Update</button>
+		</form>
+	</div>
 </div>

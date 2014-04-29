@@ -67,14 +67,36 @@ $dark-gray: #404040;
 }
 
 
-.add{
-	float: right;
-	color: $dark-gray;
-	background: white;
-	&:hover{
-		cursor: pointer;
-	}
-}
 .add.passion {
 	color: $dark-blue;
+	background: white;
+}
+
+.add.skill{
+	color: $dark-gray;
+	background: white;
+}
+
+#personal-info-form{
+	text-align: center;
+}
+
+#passion-holder {
+	margin-bottom: 75px;
+}
+
+
+.add{
+	float: right;
+	&:hover{
+		cursor: pointer;
+		color: $light-blue;
+	}
+}
+
+.glyphicon-pencil {
+	&:hover{
+		cursor: pointer;
+		color: $light-blue;
+	}
 }

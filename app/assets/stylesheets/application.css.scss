@@ -15,9 +15,23 @@
 @import "bootstrap";
 $light-blue: #7adcff;
 
+html {
+	height: 100%;
+	margin-bottom: 75px;
+}
+
 body {
 	font-family: verdana;
 	padding-top: 75px;
+	height: 100%;
+}
+
+#content{
+	margin-bottom: 175px;
+}
+
+input {
+	margin-bottom: 2px;
 }
 
 h1 {

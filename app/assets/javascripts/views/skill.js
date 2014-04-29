@@ -15,8 +15,6 @@ window.Bridge.Views.Skill = Backbone.View.extend({
 	events: {
 		"click #add-skill": "revealAddSkillForm",
 		"blur #add-skill-form": "hideAddSkillForm",
-		"mouseenter #skill-holder": "showAddSkillButton",
-		"mouseleave #skill-holder": "hideAddSkillButton",
 		"mousedown #submit-skill": "addSkill",
 		"click #submit-skill": "stopQuery",
 	},
@@ -50,7 +48,7 @@ window.Bridge.Views.Skill = Backbone.View.extend({
 	
 	hideAddSkillForm: function(event){
 		$("#add-skill-form").addClass("hidden")
-		this.openSkillForm = false;
+		this.showAddSkillButton()
 	},
 	
 	revealAddSkillForm: function(event){
@@ -62,9 +60,7 @@ window.Bridge.Views.Skill = Backbone.View.extend({
 	},
 	
 	showAddSkillButton: function(){
-		if(!this.openSkillForm){
-			$("#add-skill").removeClass("hidden")
-		}
+		$("#add-skill").removeClass("hidden")
 	},
 	
 	stopQuery: function(event){

@@ -15,6 +15,8 @@
 #  location        :string(255)
 #  age             :integer
 #  gender          :string(255)
+#  lat             :float
+#  long            :float
 #
 
 class User < ActiveRecord::Base
@@ -29,6 +31,7 @@ class User < ActiveRecord::Base
   has_many :passions, through: :passion_joins, source: :tag
   has_many :skill_joins
   has_many :skills, through: :skill_joins, source: :tag
+  has_many :projects
   
   def password=(pt)
     @password = pt
@@ -40,7 +43,8 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_credentials(params)
-    user = User.find_by(email: params[:email])
+    
+    user = User.find_by(email: params[:email].downcase)
     user.try(:is_password?, params[:password]) ? user :nil
   end
 

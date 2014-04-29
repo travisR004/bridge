@@ -14,10 +14,8 @@ window.Bridge.Views.Passion = Backbone.View.extend({
 	
 	events: {
 		"click #add-passion": "revealAddPassionForm",
-		"click #add-first-passion": "revealAddPassionForm",
 		"blur #add-passion-form": "hideAddPassionForm",
 		"mouseenter #passion-holder": "showAddPassionButton",
-		"mouseleave #passion-holder": "hideAddPassionButton",
 		"mousedown #submit-passion": "addPassion",
 		"click #submit-passion": "stopQuery"
 	},
@@ -51,6 +49,7 @@ window.Bridge.Views.Passion = Backbone.View.extend({
 	
 	hideAddPassionForm: function(){
 		$("#add-passion-form").addClass("hidden");
+		$("#add-passion").removeClass("hidden");
 		this.openPassionForm = false;
 	},
 	

@@ -14,11 +14,11 @@
 				<%= skill.escape("name") %>
 			</div>
 		<% }) %>
-		<div class="tag-holder skill add hidden" id="add-skill">
+		<div class="tag-holder skill add" id="add-skill">
 			Add Skill!
 		</div>
 		<form id="add-skill-form" class="hidden">
-			<input class="form-control" type="text" name="user[skills][]" id="add-skill-input">
+			<input class="form-control" type="text" name="user[skills][]" id="add-skill-input" placeholder="Be As Specific As Possible, ie: Baking Apple Pies, Whitewater Rafting, Corporate Finance, etc.">
 			<button class="btn btn-primary" id="submit-skill">Add Skill</button>
 		</form>
 	</div>
