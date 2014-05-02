@@ -157,6 +157,7 @@ textarea {
 
 #launch-container{
 	text-align: center;
+	margin-top: -200px;
 }
 
 .input-group-addon{
@@ -175,6 +176,16 @@ textarea {
 	font-size: 20px;
 	border-radius: 20px;
 	width: 150px;
+}
+
+#home-page-logo{
+	width: 683px;
+	height: 563px;
+}
+
+#def-holder{
+	margin-top: -100px;
+	margin-bottom: 15px;
 }
 
 @media (max-width: 900px){
