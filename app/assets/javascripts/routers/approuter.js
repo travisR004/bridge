@@ -2,7 +2,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	routes: {
 		"": "index",
 		"profile": "profile",
-		"profile/edit": "editProfile"
+		"profile/edit": "editProfile",
+		"projects": "projects"
 	},
 	
 	editProfile: function(){
@@ -29,6 +30,17 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 			var user = Bridge.Data.users.getOrFetch(currentUserId)
 			var profileView = new Bridge.Views.Profile({model: user, tags: tags})
 			this._swapView(profileView)
+		} else {
+			this.index()
+		}
+	},
+	
+	projects: function(){
+		if (currentUserId){
+			var projects = new Bridge.Collections.Projects()
+			var projectView = new Bridge.Views.Projects({collection: projects})
+			projects.fetch()
+			this._swapView(projectView)
 		} else {
 			this.index()
 		}

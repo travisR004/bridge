@@ -1,4 +1,4 @@
-window.Bridge.Collections.Users = Backbone.Collection.extend({
+window.Bridge.Collections.Projects = Backbone.Collection.extend({
 	url: "/api/projects",
 	
 	getOrFetch: function(id){

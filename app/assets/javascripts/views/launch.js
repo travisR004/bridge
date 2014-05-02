@@ -1,5 +1,5 @@
 window.Bridge.Views.Launch = Backbone.View.extend({
-	template: JST["root/landing"],
+	template: JST["root/launch"],
 	
 	render: function(){
 		var renderedContent = this.template()

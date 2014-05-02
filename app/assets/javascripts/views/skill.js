@@ -1,7 +1,6 @@
 window.Bridge.Views.Skill = Backbone.View.extend({
 	initialize: function(options){
 		this.parentView = options.parentView
-		this.openSkillForm = false;
 	},
 	
 	template: JST["user/skill"],
