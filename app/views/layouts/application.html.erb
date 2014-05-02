@@ -10,107 +10,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>	
-		<%= render 'header' %>
-	
-	<%= yield %>
-	
-	
-	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h2 class="modal-title" id="myModalLabel">Welcome Back!</h2>
-        </div>
-        <div class="modal-body">
-					<div id="login-errors" class="errors"></div>
-					<form id="sign-in" autocomplete="off">
-						<div class="input-group">
-							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
-						  <input id="email"  class="form-control login" type="text" name="user[email]" placeholder="Email.." autocomplete="false">
-						</div>
-
-						<div class="input-group">
-							<span class="input-group-addon glyphicon glyphicon-lock" style="top: 0px"></span>
-						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
-						</div>
-
-					  <button class="btn btn-primary btn-oval" id="sign-in-button">Sign In</button>
-					</form>
-        </div>
-      </div>
-    </div>
-  </div>
-	
-	<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h2 class="modal-title" id="myModalLabel">Welcome to Bridge!</h2>
-        </div>
-        <div class="modal-body">
-					<div class="signup-errors"></div>
-					<form id="sign-up" autocomplete="off">
-						<div class="input-group">
-							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
-						  <input id="email"  class="form-control login" type="text" name="user[email]" placeholder="Email..">
-						</div>
-
-						<div class="input-group">
-							<span class="input-group-addon glyphicon glyphicon-lock" style="top: 0px"></span>
-						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
-						</div>
-
-					  <button class="btn btn-primary btn-oval" id="sign-up-button">Sign Up</button>
-					</form>
-        </div>
-      </div>
-    </div>
-  </div>
-	
 	<script>
     var currentUserId = <%= current_user ? current_user.id : 0 %>;
-    $("#sign-in-button").click( function(event){
-      event.preventDefault();
-      var data = $(event.currentTarget).parent().serializeJSON()
-      $.ajax({
-        url: 'session',
-        type: "POST",
-        data: data,
-        success:function(resp){
-          currentUserId = resp.id
-          $("#login-modal").modal("hide")
-					Backbone.history.navigate("profile", {trigger: true})
-        },
-        error: function(response){
-          response.responseJSON.forEach(function(response){
-            $("#login-errors").html("<p>" + response + "</p>")
-          })
-        }
-      })
-    })
   </script>
-	<script>
-    $("#sign-up-button").click( function(event){
-      event.preventDefault();
-      var data = $(event.currentTarget).parent().serializeJSON()
-      $.ajax({
-        url: 'api/users',
-        type: "POST",
-        data: data,
-        success:function(resp){
-          currentUserId = resp.id
-          $("#signup-modal").modal("hide")
-					Backbone.history.navigate("profile", {trigger: true})
-        },
-        error: function(response){
-          response.responseJSON.forEach(function(response){
-            $("#signup-errors").html("<p>" + response + "</p>")
-          })
-        }
-      })
-    })
-  </script>
+	<% if current_user %>
+		<%= render 'header' %>
+	<% end %>
+	
+	<%= yield %>
+		
 </body>
 </html>

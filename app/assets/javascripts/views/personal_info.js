@@ -13,9 +13,9 @@ window.Bridge.Views.PersonalInfo = Backbone.View.extend({
 	
 	events: {
 		"click #edit-info": "revealEditInfoForm",
-		"blur #personal-info-form": "hideEditInfoForm",
-		"mousedown #update-info": "updateInfo",
-		"click #update-info": "stopQuery"
+		"click #close-form": "hideEditInfoForm",
+		"click #update-info": "updateInfo",
+		"submit #personal-info-form": "updateInfo"
 	},
 	
 	revealEditInfoForm: function(event){
@@ -36,10 +36,6 @@ window.Bridge.Views.PersonalInfo = Backbone.View.extend({
 	
 	showEditInfoButton: function(){
 		$("#edit-info").removeClass("hidden")
-	},
-	
-	stopQuery: function(event){
-		event.preventDefault();
 	},
 	
 	updateInfo: function(event){

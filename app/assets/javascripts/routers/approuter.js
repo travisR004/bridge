@@ -19,8 +19,12 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	},
 	
 	index: function(){
-		var indexView = new Bridge.Views.Launch()
-		this._swapView(indexView)
+		if(currentUserId){
+			this.profile()
+		} else {
+			var indexView = new Bridge.Views.Launch()
+			this._swapView(indexView)
+		}
 	},
 	
 	profile: function(){

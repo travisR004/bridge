@@ -19,6 +19,7 @@
           <h2 class="modal-title" id="myModalLabel">Welcome Back!</h2>
         </div>
         <div class="modal-body">
+					<div id="login-errors" class="errors"></div>
 					<form id="sign-in" autocomplete="off">
 						<div class="input-group">
 							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
@@ -30,7 +31,7 @@
 						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
 						</div>
 
-					  <button class="btn btn-primary btn-oval">Sign In</button>
+					  <button class="btn btn-primary btn-oval" id="sign-in-button">Sign In</button>
 					</form>
         </div>
       </div>
@@ -45,6 +46,7 @@
           <h2 class="modal-title" id="myModalLabel">Welcome to Bridge!</h2>
         </div>
         <div class="modal-body">
+					<div class="signup-errors"></div>
 					<form id="sign-up" autocomplete="off">
 						<div class="input-group">
 							<span class="input-group-addon glyphicon glyphicon-envelope" style="top: 0px"></span>
@@ -56,7 +58,7 @@
 						  <input id="password" class="form-control login" type="password" name="user[password]" placeholder="Password...">
 						</div>
 
-					  <button class="btn btn-primary btn-oval">Sign Up</button>
+					  <button class="btn btn-primary btn-oval" id="sign-up-button">Sign Up</button>
 					</form>
         </div>
       </div>

@@ -9,6 +9,43 @@ window.Bridge.Views.Launch = Backbone.View.extend({
 	
 	events: {
 		"submit #sign-in": "signIn",
-		"submit #sign-up": "signOut"
-	}
+		"submit #sign-up": "signUp"
+	},
+	
+	signUp: function(event){
+    event.preventDefault();
+    var data = $(event.currentTarget).serializeJSON()
+    $.ajax({
+      url: 'api/users',
+      type: "POST",
+      data: data,
+      success:function(resp){
+        window.location = "";
+      },
+      error: function(response){
+        response.responseJSON.forEach(function(response){
+          $("#signup-errors").html("<p>" + response + "</p>")
+        })
+      }
+    })
+  },
+	
+	signIn: function(event){
+      event.preventDefault();
+      var data = $(event.currentTarget).serializeJSON()
+      $.ajax({
+        url: 'session',
+        type: "POST",
+        data: data,
+        success:function(resp){
+          window.location = "";
+        },
+        error: function(response){
+          response.responseJSON.forEach(function(response){
+            $("#login-errors").html("<p>" + response + "</p>")
+          })
+        }
+      })
+    }
+	
 })

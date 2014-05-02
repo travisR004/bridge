@@ -1,10 +1,9 @@
-<div class="col-sm-12 col-md-8 col-md-offset-2" >
+<div class="col-sm-12 col-md-10 col-md-offset-1" >
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-sm-6">
 			<h3 class="left"><%= user.escape("first_name") ? user.escape("first_name") : "Welcome!" %></h3>
 			<div class="summary-container">
 				<div id="summary-text">
-					
 					<%= user.escape("summary") ? user.escape("summary") : "Tell us about yourself..." %>
 				</div>
 				<div class="add" id="edit-summary">
@@ -15,9 +14,11 @@
 					<button class="btn btn-primary" id="update-summary">Update</button>
 				</form>
 			</div>
+			<div class="row" id="personal-info-holder"></div>
+		</div>
+		<div class="col-sm-6">
+			<div id="passion-view-holder"></div>
+			<div id="skill-view-holder"></div>
 		</div>
 	</div>
-	<div class="row" id="personal-info-holder"></div>
-	<div class="row" id="skill-view-holder"></div>
-	<div class="row" id="passion-view-holder"></div>
 </div>

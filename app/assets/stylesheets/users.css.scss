@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $light-blue: #7adcff;
-$dark-blue: #02405E;
-$dark-gray: #404040;
+$passion: rgb(50,198,163);
+$skill: rgb(118, 113, 113);
+$off-white: rgb(251,251,251);
 
 #update-profile{
 	text-align: center;
@@ -38,7 +39,7 @@ $dark-gray: #404040;
 
 #edit-summary{
 	font-size: 24px;
-	color: $dark-gray;
+	color: $skill;
 }
 
 .summary-container {
@@ -52,51 +53,67 @@ $dark-gray: #404040;
 .tag-holder {
 	text-align: center;
 	float: left;
-	width: 25%;
-	padding: 10px;
+	width: 33%;
+	padding: 18px 10px 10px 10px;
 	margin-bottom: 5px;
-	color: white;
+	color: $off-white;
 	border: solid 2px;
+	height: 62px;
+}
+
+#add-passion, #add-skill{
+	padding: 0;
 }
 
 .skill{
-	background: $dark-gray;
+	background: $skill;
 }
 .passion {
-	background: $dark-blue;
-}
-
-
-.add.passion {
-	color: $dark-blue;
-	background: white;
-}
-
-.add.skill{
-	color: $dark-gray;
-	background: white;
+	background: $passion;
 }
 
 #personal-info-form{
 	text-align: center;
 }
 
-#passion-holder {
-	margin-bottom: 75px;
-}
-
-
 .add{
 	float: right;
-	&:hover{
-		cursor: pointer;
-		color: $light-blue;
-	}
+
 }
 
 .glyphicon-pencil {
 	&:hover{
 		cursor: pointer;
 		color: $light-blue;
+	}
+}
+
+.inside-tag{
+	margin: 0 auto;
+	border: solid 2px;
+	background: $off-white;
+	height: 58px;
+	padding: 20px 10px 10px 10px;
+}
+
+.passion.inside-tag{
+	color: $passion;
+	&:hover{
+		cursor: pointer;
+		color: $off-white;
+		background-color: $passion;
+	}
+}
+.skill.inside-tag{
+	color: $skill;
+	&:hover{
+		cursor: pointer;
+		color: $off-white;
+		background-color: $skill;
+	}
+}
+@media(max-width: 768px){
+	.tag-holder{
+		width: 50%;
 	}
 }

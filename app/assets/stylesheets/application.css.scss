@@ -13,7 +13,7 @@
  */
 
 @import "bootstrap";
-$light-blue: #7adcff;
+$green: rgb(50,198,163);
 
 html {
 	height: 100%;
@@ -24,6 +24,7 @@ body {
 	font-family: verdana;
 	padding-top: 75px;
 	height: 100%;
+	background-color: rgb(251,251,251);
 }
 
 #content{
@@ -68,27 +69,46 @@ form{
 	color: red;
 }
 
+.navbar-fixed-top{
+	border-width: 0 0 3px;
+}
+
+.navbar-toggle{
+	margin-top: 20px;
+}
+
+.navbar-inner{
+	height: inherit;
+}
+
+.navbar-nav{
+	margin-top: 20px;
+}
+
 .navbar {
-	height: 125px;
+	height: 78px;
 	font-size: 28px;
-	background-color: #fff;
+	background-color: rgb(251,251,251);
 	ul {
 		float: right;
-		background: white;
 	}
 	margin-bottom: 0px;
 	
 	.navbar-brand{
 		img{
 			width: 182px;
-			height: 100px;
+			height: 75px;
 		}
 	}
 }
 
+.navbar-brand{
+	padding: 0 0 0 0;
+}
+
 .navbar-default .navbar-nav > li > a {
-	color: #777777;
-	font-size: 44px;
+	color: $green;
+	font-size: 28px;
 	border-right: solid
 }
 
@@ -126,13 +146,9 @@ textarea {
 	height: 37px;
 }
 .btn-primary {
-	background-color: $light-blue;
+	background-color: $green;
 	font-style: bold;
-	border-color: $light-blue;
-}
-
-.navbar-header {
-	float: none;
+	border-color: $green;
 }
 
 .hide-header{
@@ -145,7 +161,7 @@ textarea {
 
 .input-group-addon{
   color: white;
-  background-color: $light-blue;
+  background-color: $green;
 }
 
 .input-group{
@@ -189,15 +205,14 @@ textarea {
 	}
 	
 	.navbar{
-		height: 75px;
+		height: 78px;
 		ul {
 			float: right;
-			background: white;
 		}
 		.navbar-brand{
 			img{
 				width: 91px;
-				height: 50px;
+				height: 75px;
 			}
 		}
 	}

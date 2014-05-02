@@ -28,7 +28,6 @@
 					class="form-control"
 					id="personal-info-focus"
 				>
-				
 				<input
 					type="text"
 					placeholder="Last Name..."
@@ -36,7 +35,7 @@
 					name="user[last_name]"
 					class="form-control"
 				>
-		
+				
 				<input
 					type="text"
 					placeholder="location"
@@ -53,13 +52,13 @@
 					class="form-control"
 				>
 
+				<select class="form-control">
+					<option name="user[gender]" value="Male">Male</option>
+					<option name="user[gender]" value="Female">Female</option>
+				</select>
 
-					<select class="form-control">
-						<option name="user[gender]" value="Male">Male</option>
-						<option name="user[gender]" value="Female">Female</option>
-					</select>
-
-				<button class="btn btn-primary" id="update-info">Update</button>
+				<input type="submit" value="Update" class="btn btn-primary form" id="update-info">
+				<button class="btn btn-primary form" id="close-info-form">Close</button>
 		</form>
 	</div>
 </div>
