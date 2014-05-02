@@ -13,11 +13,24 @@
 	<script>
     var currentUserId = <%= current_user ? current_user.id : 0 %>;
   </script>
+	
 	<% if current_user %>
 		<%= render 'header' %>
 	<% end %>
 	
 	<%= yield %>
-		
+	
+		<script>
+	  	$("#sign-out").click( function(event){
+      	event.preventDefault();
+       	$.ajax({
+	        url: 'session',
+	        type: "DELETE",
+	        success: function(resp){
+	        	window.location = "";
+	        }
+		  	})
+			})
+		</script>
 </body>
 </html>
