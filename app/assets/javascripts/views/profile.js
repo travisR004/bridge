@@ -45,7 +45,8 @@ window.Bridge.Views.Profile = Backbone.CompositeView.extend({
 	
 	hideEditSummaryForm: function(){
 		$("#edit-summary-form").addClass("hidden");
-		$("#summary-text").removeClass("hidden")
+		$("#summary-text").removeClass("hidden");
+		this.showEditSummaryButton();
 	},
 	
 	revealEditSummaryForm: function(){

@@ -11,8 +11,10 @@
  *= require_self
  *= require_tree .
  */
+$input-border-focus: rgba(50,198,163, 0.7);
 
 @import "bootstrap";
+
 $green: rgb(50,198,163);
 
 html {
@@ -22,7 +24,8 @@ html {
 
 body {
 	font-family: verdana;
-	padding-top: 75px;
+	color: rgb(127, 127, 127);
+	padding-top: 80px;
 	height: 100%;
 	background-color: rgb(251,251,251);
 }
@@ -62,6 +65,26 @@ h4 {
 
 form{
 	text-align: center;
+}
+
+label {
+	text-align: left;
+}
+
+.form-div{
+	text-align: center;
+}
+
+.full-width{
+	width: 100%;
+}
+
+.input-group{
+	width: 100%;
+}
+
+.large-textarea{
+
 }
 
 .errors {
@@ -109,7 +132,6 @@ form{
 .navbar-default .navbar-nav > li > a {
 	color: $green;
 	font-size: 28px;
-	border-right: solid
 }
 
 .headline-image, .image-wrapper{
@@ -157,7 +179,7 @@ textarea {
 
 #launch-container{
 	text-align: center;
-	margin-top: -200px;
+	margin-top: -90px;
 }
 
 .input-group-addon{
@@ -167,6 +189,10 @@ textarea {
 
 .input-group{
 	margin: 0px 25px 10px 25px;
+}
+
+.input-group.small{
+	width: inherit;
 }
 .login{
 	font-size: 24px;
@@ -179,12 +205,12 @@ textarea {
 }
 
 #home-page-logo{
-	width: 683px;
-	height: 563px;
+	width: 455px;
+	height: 375px;
 }
 
 #def-holder{
-	margin-top: -100px;
+	margin-top: -75px;
 	margin-bottom: 15px;
 }
 

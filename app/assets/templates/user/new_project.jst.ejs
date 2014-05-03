@@ -1,0 +1,49 @@
+<h1>New Project</h1>
+<div class="row">
+	<form>
+		<div class="col-sm-3 col-sm-offset-1 form-div">
+			<div class="input-group">
+				<input class="form-control" type="text" name="project[title]" placeholder="Title...">
+			</div>
+
+			<div class="input-group">
+				<textarea placeholder="Describe Your Project" class="form-control" id="project-description" name="project[description]"></textarea>
+			</div>
+		</div>
+		
+		<div class="col-sm-3 form-div">
+			<div class="input-group">
+				<input class="form-control" type="text" name="project[status]" placeholder="Project Status, ie Patent Pending, Proving Concept, etc.">
+			</div>
+			<div class="input-group">
+			  <div class="btn btn-primary full-width" id="add-image"><i class="fa fa-plus fa-2x"></i><br>Add Images</div>
+			  <input type="file" name="project[image]" class="hidden" id="file-picker">
+			</div>
+			<div class="input-group">
+				<textarea placeholder="Public Summary - This will be available for everyone to see" name="project[public_description]" class="form-control large-textarea"></textarea>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div id="needed-expertise">
+			<div class="input-group">
+				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
+			</div>
+			<div class="input-group">
+				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
+			</div>
+			<div class="input-group">
+				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
+			</div>
+			<div class="input-group">
+				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
+			</div>
+			<div class="input-group">
+				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
+			</div>
+			<div class="input-group">
+				<div id="submit-project" class="btn btn-primary full-width">Create Your Project</div>
+			</div>
+		</div>
+			
+	</form>
+</div>
