@@ -1,4 +1,4 @@
-<h1>New Project</h1>
+<h3>Create Your Project</h3>
 <div class="row">
 	<form>
 		<div class="col-sm-3 col-sm-offset-1 form-div">
@@ -20,26 +20,16 @@
 			  <input type="file" name="project[image]" class="hidden" id="file-picker">
 			</div>
 			<div class="input-group">
-				<textarea placeholder="Public Summary - This will be available for everyone to see" name="project[public_description]" class="form-control large-textarea"></textarea>
+				<textarea placeholder="Public Summary - This will be available for everyone to see" name="project[public_description]" class="form-control" id="public-project"></textarea>
 			</div>
 		</div>
 		<div class="col-sm-3">
 			<div id="needed-expertise">
+				<% for(var i = 0; i < 5; i++){ %>
 			<div class="input-group">
-				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
+				<input type="text" name="project[expertises][]" class="form-control" placeholder="Desired Expertise">
 			</div>
-			<div class="input-group">
-				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
-			</div>
-			<div class="input-group">
-				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
-			</div>
-			<div class="input-group">
-				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
-			</div>
-			<div class="input-group">
-				<input type="text" name="project[expertises][]" class="form-control" placeholder="What Skills Are You Looking For?">
-			</div>
+			<% } %>
 			<div class="input-group">
 				<div id="submit-project" class="btn btn-primary full-width">Create Your Project</div>
 			</div>

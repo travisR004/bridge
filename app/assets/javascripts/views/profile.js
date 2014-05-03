@@ -8,13 +8,6 @@ window.Bridge.Views.Profile = Backbone.CompositeView.extend({
 	
 	template: JST["user/profile"],
 	
-	events: {
-		"click #edit-summary": "revealEditSummaryForm",
-		"blur #edit-summary-input": "hideEditSummaryForm",
-		"mousedown #update-summary": "updateSummary",
-		"click #update-summary": "stopQuery"
-	},
-	
 	addPassionView: function(){
     var passionView = new Bridge.Views.Passion({model: this.model, parentView: this})
     this.addSubview("#passion-view-holder", passionView);
@@ -33,35 +26,10 @@ window.Bridge.Views.Profile = Backbone.CompositeView.extend({
     skillView.render();
 	},
 	
-	updateSummary: function(){
-		var that = this;
-		var summary = $("#edit-summary-input").val();
-		this.model.save({summary: summary}, {
-			success: function(resp){
-				that.model.fetch()
-			}
-		})
-	},
-	
-	hideEditSummaryForm: function(){
-		$("#edit-summary-form").addClass("hidden");
-		$("#summary-text").removeClass("hidden");
-		this.showEditSummaryButton();
-	},
-	
-	revealEditSummaryForm: function(){
-		$("#edit-summary-form").removeClass("hidden")
-		$("#summary-text").addClass("hidden")
-		$("#edit-summary-input").focus();
-		this.hideEditSummaryButton();
-	},
-	
-	showEditSummaryButton: function(){
-		$("#edit-summary").removeClass("hidden")
-	},
-	
-	hideEditSummaryButton: function(){
-		$("#edit-summary").addClass("hidden")
+	addSummaryView: function(){
+		var summaryView = new Bridge.Views.Summary({model: this.model, parentView: this})
+		this.addSubview("#summary-view-holder", summaryView)
+		summaryView.render();
 	},
 	
 	createAvailableTags: function(){
@@ -77,6 +45,7 @@ window.Bridge.Views.Profile = Backbone.CompositeView.extend({
 		this.addSkillView();
 		this.addPassionView();
 		this.addPersonalInfoView();
+		this.addSummaryView();
 		return this
 	},
 	

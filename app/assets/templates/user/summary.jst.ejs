@@ -1,0 +1,13 @@
+<h3 class="left"><%= user.escape("first_name") ? user.escape("first_name") : "Welcome!" %></h3>
+<div class="summary-container">
+	<div id="summary-text">
+		<%= user.escape("summary") ? user.escape("summary") : "Tell us about yourself..." %>
+	</div>
+	<div class="add" id="edit-summary">
+		<span class="glyphicon glyphicon-pencil"></span>
+	</div>
+	<form id="edit-summary-form" class="hidden">
+		<textarea class="form-control" name="user[summary]" id="edit-summary-input"><%= user.escape("summary") %></textarea>
+		<button class="btn btn-primary" id="update-summary">Update</button>
+	</form>
+</div>
