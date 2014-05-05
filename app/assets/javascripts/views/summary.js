@@ -20,6 +20,7 @@ window.Bridge.Views.Summary = Backbone.View.extend({
 	
 	updateSummary: function(){
 		var that = this;
+		console.log("mouse-downed")
 		var summary = $("#edit-summary-input").val();
 		this.model.save({summary: summary}, {
 			success: function(resp){
