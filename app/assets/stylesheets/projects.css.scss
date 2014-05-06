@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$gray: rgb(118, 113, 113);
+$green: rgb(50,198,163);
 
 #public-project{
 	height: 150px;
@@ -9,4 +11,24 @@
 
 #project-description{
 	height: 220px;
+}
+
+#create-project, #create-partnership{
+	color: $green;
+	border: solid 10px;
+	margin-top: 10px;
+	height: 300px;
+}
+
+#create-partnership{
+	color: $gray;
+}
+
+.create{
+	padding: 50px 0px 25px 0px;
+	height: 200px;
+}
+
+.create-button{
+	margin-top: 10px;
 }

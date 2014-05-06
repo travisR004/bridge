@@ -1,4 +1,5 @@
 class Api::ProjectsController < ApplicationController
+  before_action :require_login!, only: [:create]
   def index
     @projects = current_user.projects
     render json: @projects

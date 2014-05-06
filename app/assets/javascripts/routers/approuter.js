@@ -1,10 +1,20 @@
 window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	routes: {
 		"": "index",
+		"create": "create",
 		"profile": "profile",
 		"profile/edit": "editProfile",
 		"projects": "projects",
 		"projects/new": "newProject"
+	},
+	
+	create: function(){
+		if(currentUserId){
+			var createView = new Bridge.Views.CreatePage();
+			this._swapView(createView)
+		} else {
+			this.index()
+		}
 	},
 	
 	editProfile: function(){
@@ -30,7 +40,9 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	
 	newProject: function(){
 		if(currentUserId){
-			var newProjectView = new Bridge.Views.NewProject();
+			var tags = Bridge.Data.tags
+			tags.fetch()
+			var newProjectView = new Bridge.Views.NewProject({tags: tags});
 			this._swapView(newProjectView);
 		} else {
 			this.index();

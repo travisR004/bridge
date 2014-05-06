@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$light-blue: #7adcff;
 $passion: rgb(50,198,163);
 $skill: rgb(118, 113, 113);
 $off-white: rgb(251,251,251);
@@ -84,7 +83,7 @@ $off-white: rgb(251,251,251);
 .glyphicon-pencil {
 	&:hover{
 		cursor: pointer;
-		color: $light-blue;
+		color: $passion;
 	}
 }
 

@@ -14,7 +14,7 @@
 $input-border-focus: rgba(50,198,163, 0.7);
 
 @import "bootstrap";
-
+$gray: rgb(118, 113, 113);
 $green: rgb(50,198,163);
 
 html {
@@ -25,7 +25,7 @@ html {
 body {
 	font-family: verdana;
 	color: rgb(127, 127, 127);
-	padding-top: 200px;
+	padding-top: 210px;
 	height: 100%;
 	background-color: rgb(251,251,251);
 }
@@ -61,6 +61,7 @@ h3 {
 
 h4 {
 	font-size: 2.8em;
+	margin-bottom: 5px;
 }
 
 form{
@@ -182,6 +183,20 @@ textarea {
 	background-color: $green;
 	font-style: bold;
 	border-color: $green;
+	margin-bottom: 5px;
+	&:hover{
+		background-color: #168D71;
+		border-color: #168D71;
+	}
+}
+
+.gray {
+	background-color: $gray;
+	border-color: $gray;
+	&:hover{
+		background-color: #4B4747;
+		border-color: #4B4747;
+	}
 }
 
 .hide-header{
@@ -247,6 +262,10 @@ textarea {
 }
 
 @media(max-width: 768px){
+	body{
+		padding-top: 105px;
+	}
+	
 	h1 {
 		font-size: 24px;
 	}
@@ -262,6 +281,18 @@ textarea {
 	
 	.navbar-default .navbar-nav > li > a {
 		font-size: 24px;	
+	}
+	
+	.navbar-nav.navigation-holder{
+		width: inherit;
+	}
+	
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: none;
+	}
+	
+	#bridge-nav-collapse{
+		border: none;
 	}
 	
 	.navbar{
