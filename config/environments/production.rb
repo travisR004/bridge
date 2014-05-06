@@ -44,6 +44,16 @@ Bridge::Application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET_PROD'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+      :s3_host_name => "s3-us-west-1.amazonaws.com"
+    }
+  }
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]

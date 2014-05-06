@@ -25,7 +25,7 @@ window.Bridge.Views.NewProject = Backbone.View.extend({
     for(var i = 0; i < files.length; i++){
       var reader = new FileReader();
       reader.onload = function(ev){
-        var $input = $('<input type="hidden" name="project[image][]">')
+        var $input = $('<input type="hidden" name="image[photo][]">')
         $input.val(ev.target.result);
         $("#project-form").append($input)
       }

@@ -5,7 +5,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 		"profile": "profile",
 		"profile/edit": "editProfile",
 		"projects": "projects",
-		"projects/new": "newProject"
+		"projects/new": "newProject",
+		"images": "images"
 	},
 	
 	create: function(){
@@ -15,6 +16,13 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 		} else {
 			this.index()
 		}
+	},
+	
+	images: function(){
+		var allImages = new Bridge.Collections.Images()
+		allImages.fetch()
+		var imagesView = new Bridge.Views.Images({collection: allImages}) 
+		this._swapView(imagesView)
 	},
 	
 	editProfile: function(){

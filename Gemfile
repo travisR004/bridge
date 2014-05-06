@@ -12,6 +12,8 @@ gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
 gem 'serialize_json-rails'
 gem 'paperclip'
+gem 'figaro'
+gem 'aws-sdk'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

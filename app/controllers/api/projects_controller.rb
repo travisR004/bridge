@@ -8,16 +8,14 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = current_user.projects.new(project_params)
     if @project.save
-      params[:project][:image].each do |photo|
-        fail
-        image = new Image(project_id: @project.id)
+      params[:image][:photo].each do |photo|
+        image = Image.new(project_id: @project.id)
         image.photo = photo
-        image.save
+        image.save!
       end
-      
       render json: @project
     else
-      render json: @project.errors.full_messages
+      render json: @project.errors.full_messages, status: 422
     end
     
   end

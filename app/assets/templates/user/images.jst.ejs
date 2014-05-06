@@ -1,0 +1,9 @@
+<h1>Images</h1>
+<ul>
+<% images.forEach(function(image){ %>
+	<li>
+		<img src="<%= image.escape("photo_url") %>">
+	</li>
+<% }) %>
+</ul>
+	
