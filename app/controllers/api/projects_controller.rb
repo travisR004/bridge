@@ -5,6 +5,11 @@ class Api::ProjectsController < ApplicationController
     render json: @projects
   end
   
+  def show
+    @project = current_user.projects.find(params[:id])
+    render 'projects/show'
+  end
+  
   def create
     @project = current_user.projects.new(project_params)
     if @project.save

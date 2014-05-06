@@ -1,0 +1,9 @@
+<h1><%= project.escape("title") %></h1>
+<ul>
+<% project.images().forEach(function(image){ %>
+	<li>
+		<img src="<%= image.escape("photo_url") %>">
+	</li>
+<% }) %>
+</ul>
+	
