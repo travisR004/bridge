@@ -1,6 +1,6 @@
 <h3>Create Your Project</h3>
-<div class="row">
-	<form>
+<div class="row" id="new-project">
+	<form id="project-form">
 		<div class="col-sm-3 col-sm-offset-1 form-div">
 			<div class="input-group">
 				<input class="form-control" type="text" name="project[title]" placeholder="Title...">
@@ -17,7 +17,7 @@
 			</div>
 			<div class="input-group">
 			  <div class="btn btn-primary full-width" id="add-image"><i class="fa fa-plus fa-2x"></i><br>Add Images</div>
-			  <input type="file" name="project[image]" class="hidden" id="file-picker">
+			  <input type="file" name="project[images][]" class="hidden" id="file-picker">
 			</div>
 			<div class="input-group">
 				<textarea placeholder="Public Summary - This will be available for everyone to see" name="project[public_description]" class="form-control" id="public-project"></textarea>
@@ -34,6 +34,7 @@
 				<div id="submit-project" class="btn btn-primary full-width">Create Your Project</div>
 			</div>
 		</div>
+		<div id="image-titles"></div>
 			
 	</form>
 </div>

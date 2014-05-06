@@ -9,6 +9,7 @@
 #  updated_at         :datetime
 #  public_description :text
 #  user_id            :integer
+#  status             :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

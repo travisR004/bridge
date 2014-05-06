@@ -9,9 +9,11 @@
 #  updated_at         :datetime
 #  public_description :text
 #  user_id            :integer
+#  status             :string(255)
 #
 
 class Project < ActiveRecord::Base
   validates :title, :description, presence: true
   belongs_to :user
+  has_many :images
 end

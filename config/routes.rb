@@ -3,6 +3,7 @@ Bridge::Application.routes.draw do
     get "static_pages/root"
 
   namespace :api, defaults: {format: :json} do
+    resources :images
     resources :users, only: [:show, :create, :update, :destroy]
     resources :tags, only: [:index, :create]
     resources :passion_joins, only: [:create, :destroy]
