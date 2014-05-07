@@ -32,20 +32,6 @@
 		  	})
 			})
 		</script>
-		
-		<script>
-			$("#beats").click(function(event){
-				event.preventDefault();
-				$.ajax({
-					url: "https://partner.api.beatsmusic.com/v1/api/search?q=blood+on+the+tracks&type=artist&client_id=ftmrzv8979th76m2u74jpwtu",
-					type: "GET",
-					success: function(resp){
-						debugger
-						$.ajax({
-							url: "https://partner.api.beatsmusic.com/v1/api/search?q=blood+on+the+tracks&type=artist&client_id=ftmrzv8979th76m2u74jpwtu",
-					}
-				})
-			})
-		</script>
+
 </body>
 </html>
