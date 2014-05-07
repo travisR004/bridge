@@ -1,2 +1,41 @@
-<div id="content">
-</div>
+<form id="beats-search">
+	<input type="text" id="keyword">
+	<input type="submit" value="submit">
+</form>
+
+<a href="https://partner.api.beatsmusic.com/v1/oauth2/authorize?&response_type=token&redirect_uri=http://localhost:3000/&client_id=ftmrzv8979th76m2u74jpwtu"id="sign-in">
+	Sign in to beats
+</a>
+
+<ul id="results">
+</ul>
+
+<script>
+	$("#beats-search").submit(function(event){
+		event.preventDefault();
+		var data = $("#keyword").val().split(" ").join("+")
+		$.ajax({
+			url: "https://partner.api.beatsmusic.com/v1/api/search?q=" + data + "&type=track&client_id=ftmrzv8979th76m2u74jpwtu",
+			type: "GET",
+			success: function(resp){
+				resp.data.forEach(function(result){
+					var details = $("<li class='result' id=" + result.id + ">" + result.detail + ": " + result.display + "</li>")
+					$("#results").append(details)
+				})
+			}
+		})
+	})
+</script>
+
+<script>
+	$("#results").click(function(event){
+		var data = $(event.target).attr('id');
+		$.ajax({
+			url: "https://partner.api.beatsmusic.com/v1/api/tracks/" + data + "/&access_token=sfcjrvrcb8qf3u6egtrekgj4",
+			type: "GET",
+			success: function(resp){
+				debugger
+			}
+		})
+	})
+</script>
