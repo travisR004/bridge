@@ -1,0 +1,8 @@
+<h1>Explore</h1>
+
+<% projects.forEach(function(project){ %>
+	<div class="float-left">
+		<img src="<%= project.escape("photo_url_small") %>">
+		<p><%= project.escape("title") %></p>
+	</div>
+<% }) %>

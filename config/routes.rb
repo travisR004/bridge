@@ -4,6 +4,7 @@ Bridge::Application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :images
+    resources :explores, only: [:index]
     resources :users, only: [:show, :create, :update, :destroy]
     resources :tags, only: [:index, :create]
     resources :passion_joins, only: [:create, :destroy]

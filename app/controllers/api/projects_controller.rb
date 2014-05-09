@@ -1,8 +1,13 @@
 class Api::ProjectsController < ApplicationController
   before_action :require_login!, only: [:create]
   def index
-    @projects = current_user.projects
-    render json: @projects
+    if params[:explore]
+      @projects = Project.all
+      render 'projects/index'
+    else
+      @projects = current_user.projects
+      render json: @projects
+    end
   end
   
   def show

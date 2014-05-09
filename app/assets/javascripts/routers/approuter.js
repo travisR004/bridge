@@ -6,7 +6,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 		"profile/edit": "editProfile",
 		"projects": "projects",
 		"projects/new": "newProject",
-		"project/:id": "showProject"
+		"projects/:id": "showProject",
+		"explore": "explore"
 	},
 	
 	create: function(){
@@ -16,6 +17,16 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 		} else {
 			this.index()
 		}
+	},
+	
+	explore: function(){
+		var projects = new Bridge.Collections.Projects();
+		projects.fetch({
+	    traditional: true,
+    	data: {explore: true}
+		});
+		var exploreView = new Bridge.Views.Explore({collection: projects})
+		this._swapView(exploreView)
 	},
 	
 	showProject: function(id){

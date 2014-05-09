@@ -32,3 +32,11 @@ $green: rgb(50,198,163);
 .create-button{
 	margin-top: 10px;
 }
+
+.project-holder{
+	background-color: $green;
+	&:hover{
+		background-color: #168D71;
+		border-color: #168D71;
+	}
+}
