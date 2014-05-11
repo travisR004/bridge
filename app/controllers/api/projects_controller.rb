@@ -18,10 +18,12 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = current_user.projects.new(project_params)
     if @project.save
-      params[:image][:photo].each do |photo|
-        image = Image.new(project_id: @project.id)
-        image.photo = photo
-        image.save!
+      if params[:image][:photo]
+        params[:image][:photo].each do |photo|
+          image = Image.new(project_id: @project.id)
+          image.photo = photo
+          image.save!
+        end
       end
       render json: @project
     else
