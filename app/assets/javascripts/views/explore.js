@@ -6,7 +6,6 @@ window.Bridge.Views.Explore = Backbone.View.extend({
 	template: JST["user/explore"],
 	
 	render: function(){
-		debugger
 		var renderedContent = this.template({projects: this.collection});
 		this.$el.html(renderedContent)
 		return this

@@ -1,4 +1,9 @@
 window.Bridge.Views.NewProject = Backbone.View.extend({
+	initialize: function(options){
+		this.tags = options.tags
+		this.listenTo(this.tags, "sync", this.render)
+	},
+	
 	template: JST["user/new_project"],
 	
 	render: function(){

@@ -2,7 +2,7 @@ class Api::ProjectsController < ApplicationController
   before_action :require_login!, only: [:create]
   def index
     if params[:explore]
-      @projects = Project.all
+      @projects = Project.all.includes(:images)
       render 'projects/index'
     else
       @projects = current_user.projects
