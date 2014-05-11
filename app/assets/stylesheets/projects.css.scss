@@ -50,7 +50,10 @@ $green: rgb(50,198,163);
 
 
 .project-scroller::-webkit-scrollbar { 
-	background-color: rgb(251,251,251) 
+	background-color: rgb(251,251,251) ;
+	color: rgb(251,251,251);
+	border-color: green;
+	border: solid 2px;
 }
 
 
