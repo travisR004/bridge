@@ -39,4 +39,11 @@ $green: rgb(50,198,163);
 		background-color: #168D71;
 		border-color: #168D71;
 	}
+	width: 200px;
+}
+
+.project-scroller{
+	width: 100%;
+	overflow-x: scroll;
+	white-space: nowrap;
 }

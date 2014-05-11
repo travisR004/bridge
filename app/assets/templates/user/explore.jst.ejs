@@ -1,8 +1,11 @@
 <h1>Explore</h1>
-
-<% projects.forEach(function(project){ %>
-	<div class="float-left">
-		<img src="<%= project.escape("photo_url_small") %>">
-		<p><%= project.escape("title") %></p>
-	</div>
-<% }) %>
+<div class="project-scroller">
+	<ul>
+		<% projects.forEach(function(project){ %>
+			<li class="project-holder inline-block tag-holder">
+				<!-- <img src="<%= project.escape("photo_url_small") %>"> -->
+				<p><%= project.escape("title") %></p>
+			</li>
+		<% }) %>
+	</ul>
+</div>
