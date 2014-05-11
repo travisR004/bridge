@@ -1,6 +1,8 @@
 Bridge::Application.routes.draw do
   root to: "static_pages#home"
     get "static_pages/root"
+    post "static_pages/allow_access"
+    get "static_pages/not_home"
 
   namespace :api, defaults: {format: :json} do
     resources :images

@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
   
+  def require_access
+    redirect_to static_pages_not_home_url unless session[:access_token] == "4vuZyBmDvbSi0JV54RuVug"
+  end
+  
 end
