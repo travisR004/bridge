@@ -47,6 +47,7 @@ $off-white: rgb(251,251,251);
 
 .tags {
 	overflow: auto;
+	padding: 0px;
 }
 
 .tag-holder {
@@ -111,6 +112,7 @@ $off-white: rgb(251,251,251);
 		background-color: $skill;
 	}
 }
+
 @media(max-width: 900px){
 	.tag-holder{
 		width: 50%;
