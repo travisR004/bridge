@@ -1,0 +1,60 @@
+@media(max-width: 768px){
+	body{
+		padding-top: 105px;
+	}
+	
+	h1 {
+		font-size: 24px;
+	}
+	h2 {
+		font-size: 22px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	
+	#def-holder{
+		h4{
+			font-size: 18px;
+		}
+	}
+	
+	#home-page-logo{
+		margin: 100px 0 30px 0;
+		width: 364px;
+		height: 140px;
+	}
+	
+	#headline{
+		min-height: 200px;
+	}
+	
+	.navbar-default .navbar-nav > li > a {
+		font-size: 24px;	
+	}
+	
+	.navbar-nav.navigation-holder{
+		width: inherit;
+	}
+	
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: none;
+	}
+	
+	#bridge-nav-collapse{
+		border: none;
+	}
+	
+	.navbar{
+		height: 78px;
+		ul {
+			float: right;
+		}
+		.navbar-brand{
+			img{
+				width: 91px;
+				height: 75px;
+			}
+		}
+	}
+}
