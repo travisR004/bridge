@@ -4,7 +4,11 @@
 		<% projects.forEach(function(project){ %>
 			<li class="inline-block explore-holder">
 				<a href="#">
-					<img src="<%= project.escape("photo_url") %>">
+					<!-- <% if(project.escape("photo_url")){ %> -->
+					<!-- <img src="<%= project.escape("photo_url_small") %>"> -->
+					<!-- <% } else { %> -->
+						<!-- <img class="default-display" src="/assets/project_default.png"> -->
+					<!-- <% }  %> -->
 					<%= project.escape("title") %>
 				</a>
 			</li>

@@ -34,6 +34,13 @@ body {
 	margin-bottom: 175px;
 }
 
+a{
+	color: $green;
+	&:hover{
+		color: #168D71;
+	}
+}
+
 input {
 	margin-bottom: 2px;
 }
