@@ -154,6 +154,9 @@ ul{
 .navbar-default .navbar-nav > li > a {
 	color: $gray;
 	font-size: 24px;
+	&:hover {
+		color: $green;
+	}
 }
 
 #sign-out, #beats {
