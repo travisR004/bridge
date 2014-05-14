@@ -113,6 +113,22 @@ $off-white: rgb(251,251,251);
 	}
 }
 
+.overlay{
+	visibility: visibile;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow: auto;
+	overflow-y: scroll;
+	background-color: rgba(255,255,255,0.8);
+	z-index: 1050;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
 @media(max-width: 900px){
 	.tag-holder{
 		width: 50%;

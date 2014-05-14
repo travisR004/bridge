@@ -129,19 +129,6 @@ ul{
 	margin-top: 20px;
 }
 
-.navbar-nav.navigation-holder{
-	text-align: center;
-	margin-top: 0px;
-	width: 100%;
-	img {
-		height: 60px;
-		width: 60px;
-	}
-	li {
-		width: 20%;
-	}
-}
-
 .navbar {
 	height: 208px;
 	background-color: rgb(251,251,251);
@@ -161,8 +148,25 @@ ul{
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: $green;
+	color: $gray;
 	font-size: 24px;
+}
+
+#sign-out, #beats {
+	color: $green;
+}
+
+.navbar-nav.navigation-holder{
+	text-align: center;
+	margin-top: 0px;
+	width: 100%;
+	img {
+		height: 60px;
+		width: 60px;
+	}
+	li {
+		width: 16.666666666%;
+	}
 }
 
 .headline-image, .image-wrapper{
