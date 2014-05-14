@@ -1,21 +1,28 @@
 <div class="col-md-12">
-	<h3 class="left">Info</h3>
+	<h4 class="left">Info</h4>
 	<div id="info-holder">
 		<div id="personal-info">
-			<div class="personal" id="first-name">
-				<%= user.escape("first_name") ? user.escape("first_name") : "First Name" %>
+			<div class="col-sm-12 personal" id="age">
+				<div class="float-left">Age:</div>
+				<div class="float-right">
+					<%= user.escape("age") ? user.escape("age") : "" %>
+				</div>
 			</div>
-	
-			<div class="personal" id="last-name">
-				<%= user.escape("last_name") ? user.escape("last_name") : "Last Name"%>
+			
+			<div class="col-sm-12 personal" id="city">
+				<div class="float-left">Location:</div>
+				<div class="float-right">
+					<%= user.escape("location") ? user.escape("location") : ""%>
+				</div>
 			</div>
-	
-			<div class="personal" id="city">
-				<%= user.escape("location") ? user.escape("location") : "Location"%>
+			
+			<div class="col-sm-12 personal" id="city">
+				<div class="float-left">Current Status:</div>
+				<div class="float-right">
+					<%= user.escape("current_status") ? user.escape("current_status") : "" %>
+				</div>
 			</div>
-			<div class="personal" id="age">
-				<%= user.escape("age") ? user.escape("age") : "Age" %>
-			</div>
+			
 			<button class="btn btn-primary add" id="edit-info">Edit Info</button>
 		</div>
 	
@@ -49,6 +56,14 @@
 					value="<%= user.escape('age') %>"
 					placeholder="Age"
 					name="user[age]"
+					class="form-control"
+				>
+				
+				<input
+					type="text"
+					value="<%= user.escape("current_status") %>"
+					placeholder="Status"
+					name="user[current_status]"
 					class="form-control"
 				>
 

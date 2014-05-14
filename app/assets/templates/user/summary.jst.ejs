@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-	<h3 class="left"><%= user.escape("first_name") ? user.escape("first_name") : "Welcome!" %></h3>
+	<h4 class="left"><%= user.escape("first_name") ? user.escape("first_name") + " " + user.escape("last_name") : "Welcome!" %></h4>
 	<div class="summary-container">
 		<div id="summary-text">
 			<%= user.escape("summary") ? user.escape("summary") : "Tell us about yourself..." %>
