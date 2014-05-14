@@ -12,6 +12,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	
 	create: function(){
 		if(currentUserId){
+			$(".active-headliner").removeClass("active-headliner")
+			$("#create").addClass("active-headliner")
 			var createView = new Bridge.Views.CreatePage();
 			this._swapView(createView)
 		} else {
@@ -20,6 +22,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	},
 	
 	explore: function(){
+		$(".active-headliner").removeClass("active-headliner")
+		$("#explore").addClass("active-headliner")
 		var projects = new Bridge.Collections.Projects();
 		projects.fetch({
 	    traditional: true,
@@ -69,6 +73,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	
 	profile: function(){
 		if (currentUserId){
+			$(".active-headliner").removeClass("active-headliner")
+			$("#profile").addClass("active-headliner")
 			var tags = Bridge.Data.tags
 			tags.fetch()
 			var user = Bridge.Data.users.getOrFetch(currentUserId)
@@ -81,6 +87,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	
 	projects: function(){
 		if (currentUserId){
+			$(".active-headliner").removeClass("active-headliner")
+			$("#projects").addClass("active-headliner")
 			var projects = new Bridge.Collections.Projects()
 			var projectView = new Bridge.Views.Projects({collection: projects})
 			projects.fetch()

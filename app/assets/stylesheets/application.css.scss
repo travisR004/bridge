@@ -163,6 +163,11 @@ ul{
 	color: $green;
 }
 
+.navbar-default .navbar-nav > li > a.active-headliner {
+	color: $green;
+	border: none !important;
+}
+
 .navbar-nav.navigation-holder{
 	text-align: center;
 	margin-top: 0px;
