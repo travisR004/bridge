@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   has_many :skill_joins
   has_many :skills, through: :skill_joins, source: :tag
   has_many :projects
+  has_many :partnerships
+  has_many :partners, through: :partnerships
   
   def password=(pt)
     @password = pt
