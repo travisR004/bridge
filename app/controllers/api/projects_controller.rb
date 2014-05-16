@@ -1,5 +1,6 @@
 class Api::ProjectsController < ApplicationController
-  before_action :require_login!, only: [:create]
+  before_action :require_login!, only: [:create, :index, :show]
+  
   def index
     if params[:explore]
       @projects = Project.all.includes(:images)

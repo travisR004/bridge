@@ -11,6 +11,7 @@
  *= require_self
  *= require_tree .
  */
+ 
 $input-border-focus: rgba(50,198,163, 0.7);
 
 @import "bootstrap";
@@ -25,13 +26,9 @@ html {
 body {
 	font-family: verdana;
 	color: rgb(127, 127, 127);
-	padding-top: 210px;
+	margin-top: 210px;
 	height: 100%;
 	background-color: rgb(251,251,251);
-}
-
-#content{
-	margin-bottom: 175px;
 }
 
 a{

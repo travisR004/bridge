@@ -17,6 +17,7 @@
 #  gender          :string(255)
 #  lat             :float
 #  long            :float
+#  current_status  :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

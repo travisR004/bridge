@@ -15,7 +15,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 			$(".active-headliner").removeClass("active-headliner")
 			$("#create").addClass("active-headliner")
 			var createView = new Bridge.Views.CreatePage();
-			this._swapView(createView)
+			this._swapView(createView);
+			$(document).scrollTop(0);
 		} else {
 			this.index()
 		}
@@ -31,24 +32,14 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 		});
 		var exploreView = new Bridge.Views.Explore({collection: projects})
 		this._swapView(exploreView)
+		$(document).scrollTop(0);
 	},
 	
 	showProject: function(id){
 		var project = new Bridge.Collections.Projects().getOrFetch(id)
 		var projectView = new Bridge.Views.Project({model: project}) 
 		this._swapView(projectView)
-	},
-	
-	editProfile: function(){
-		if(currentUserId){
-			var tags = Bridge.Data.tags
-			tags.fetch()
-			var user = Bridge.Data.users.getOrFetch(currentUserId);
-			var editProfileView = new Bridge.Views.editProfile({model: user, tags: tags})
-			this._swapView(editProfileView)
-		} else {
-			this.index()
-		}
+		$(document).scrollTop(0);
 	},
 	
 	index: function(){
@@ -66,6 +57,7 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 			tags.fetch()
 			var newProjectView = new Bridge.Views.NewProject({tags: tags});
 			this._swapView(newProjectView);
+			$(document).scrollTop(0);
 		} else {
 			this.index();
 		}
@@ -80,6 +72,7 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 			var user = Bridge.Data.users.getOrFetch(currentUserId)
 			var profileView = new Bridge.Views.Profile({model: user, tags: tags})
 			this._swapView(profileView)
+			$(document).scrollTop(0);
 		} else {
 			this.index()
 		}
@@ -93,6 +86,7 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 			var projectView = new Bridge.Views.Projects({collection: projects})
 			projects.fetch()
 			this._swapView(projectView)
+			$(document).scrollTop(0);
 		} else {
 			this.index()
 		}

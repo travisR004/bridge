@@ -17,6 +17,7 @@
 #  gender          :string(255)
 #  lat             :float
 #  long            :float
+#  current_status  :string(255)
 #
 
 class User < ActiveRecord::Base
