@@ -27,11 +27,13 @@ window.Bridge.Views.Passion = Backbone.View.extend({
 		this.tags.fetch({
 			data: {tag_name: tagName},
 			success: function(data){
-				$("#breadcrumbs").append(tagName + "<")
-				$("#add-passion-input").html("<option value=''>Select Your Passion</option>");
-				data.models[0].attributes.children.forEach(function(child){
-					$("#add-passion-input").append("<option value='" + child.name + "'>" + child.name + "</option>");
-				})
+				if(data.models[0].attributes.children.length > 0){
+					$("#breadcrumbs").append(tagName + "<")
+					$("#add-passion-input").html("<option value=''>Select Your Passion</option>");
+					data.models[0].attributes.children.forEach(function(child){
+						$("#add-passion-input").append("<option value='" + child.name + "'>" + child.name + "</option>");
+					})
+				}
 			}
 		})
 	},
@@ -44,7 +46,7 @@ window.Bridge.Views.Passion = Backbone.View.extend({
 			success: function(resp){
 				var newPassion = new Bridge.Models.PassionJoin();
 				newPassion.save({passion_join: {tag_id: resp.id}});
-				that.parentView.tags.fetch()
+				that.tags.fetch()
 				that.model.fetch()
 			},
 			error: function(model, resp){
@@ -70,7 +72,6 @@ window.Bridge.Views.Passion = Backbone.View.extend({
 	},
 	
 	revealAddPassionForm: function(event){
-		// this.parentView.makeFormSearchable("#add-passion-input");
 		$("#add-passion-form").removeClass("hidden")
 		$("#add-passion-input").focus();
 		this.hideAddPassionButton();

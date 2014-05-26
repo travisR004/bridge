@@ -63,6 +63,7 @@ $off-white: rgb(251,251,251);
 
 #add-passion, #add-skill{
 	padding: 0;
+	background: $off-white;
 }
 
 .skill{
@@ -90,7 +91,7 @@ $off-white: rgb(251,251,251);
 
 .inside-tag{
 	margin: 0 auto;
-	border: solid 2px;
+	border: solid 3px;
 	background: $off-white;
 	height: 58px;
 	padding: 17px 10px 10px 10px;
@@ -104,6 +105,7 @@ $off-white: rgb(251,251,251);
 		background-color: $passion;
 	}
 }
+
 .skill.inside-tag{
 	color: $skill;
 	&:hover{
