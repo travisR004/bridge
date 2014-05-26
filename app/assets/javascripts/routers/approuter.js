@@ -7,7 +7,8 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 		"projects": "projects",
 		"projects/new": "newProject",
 		"projects/:id": "showProject",
-		"explore": "explore"
+		"explore": "explore",
+		"partnerships/new": "newPartnership"
 	},
 	
 	create: function(){
@@ -49,6 +50,16 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 			var indexView = new Bridge.Views.Launch()
 			this._swapView(indexView)
 		}
+	},
+	
+	newPartnership: function(){
+		if(currentUserId){
+			var newPartnershipView = new Bridge.Views.NewPartnership();
+			this._swapView(newPartnershipView);
+		} else {
+			this.index();
+		}
+		
 	},
 	
 	newProject: function(){

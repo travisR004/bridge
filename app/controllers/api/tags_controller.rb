@@ -2,8 +2,13 @@ class Api::TagsController < ApplicationController
   before_action :require_login!
   
   def index
-    @tags = Tag.all
-    render json: @tags
+    if params[:tag_name]
+      @tag = Tag.find_by(name: params[:tag_name])
+      render json: @tag.to_json(include: :children)
+    else
+      @tags = Tag.where("parent_id IS NULL")
+      render json: @tags
+    end
   end
   
   def create

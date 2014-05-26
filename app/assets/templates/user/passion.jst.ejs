@@ -1,6 +1,6 @@
 <div class="col-md-12">
-	<h4 class="left">Passions and Interests</h4>
 	<div class="tags" id="passion-holder">
+	<h4 class="left">Passions and Interests</h4>
 		<% if(passions.length < 1){%>
 			<div class="tag-holder passion">
 				Your Passions Will
@@ -19,8 +19,14 @@
 					Add Passion
 				</div>
 			</div>
+			<div class="col-md-12" id="breadcrumbs"></div>
 		<form id="add-passion-form" class="hidden">
-			<input class="form-control" type="text" name="user[passions][]" id="add-passion-input">
+			<select class="form-control" name="user[passions][]" id="add-passion-input">
+				<option value="">Select Your Passion</option>
+				<% tags.forEach(function(tag){ %>
+					<option value="<%= tag.escape("name") %>"><%= tag.escape('name') %></option>
+				<% }) %>
+			</select>
 			<button class="btn btn-primary" id="submit-passion">Add Passion</button>
 		</form>
 	</div>

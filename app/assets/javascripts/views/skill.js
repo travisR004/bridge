@@ -55,7 +55,6 @@ window.Bridge.Views.Skill = Backbone.View.extend({
 		$("#add-skill-form").removeClass("hidden");
 		$("#add-skill-input").focus();
 		this.hideAddSkillButton();
-		this.openSkillForm = true;
 	},
 	
 	showAddSkillButton: function(){

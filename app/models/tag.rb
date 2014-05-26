@@ -17,4 +17,7 @@ class Tag < ActiveRecord::Base
   
   has_many :skill_joins, dependent: :destroy
   has_many :users_with_skill, through: :skill_joins, source: :users
+  
+  has_many :children, foreign_key: :parent_id, class_name: "Tag"
+  belongs_to :parent, class_name: "Tag"
 end
