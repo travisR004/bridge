@@ -21,12 +21,7 @@
 			</div>
 			<div class="col-md-12" id="breadcrumbs"></div>
 		<form id="add-passion-form" class="hidden">
-			<select class="form-control" name="user[passions][]" id="add-passion-input">
-				<option value="">Select Your Passion</option>
-				<% tags.forEach(function(tag){ %>
-					<option value="<%= tag.escape("name") %>"><%= tag.escape('name') %></option>
-				<% }) %>
-			</select>
+			<input class="form-control" type="text" name="user[passions][]" id="add-passion-input">
 			<button class="btn btn-primary" id="submit-passion">Add Passion</button>
 		</form>
 	</div>
