@@ -1,16 +1,14 @@
 # == Schema Information
 #
-# Table name: images
+# Table name: pending_requests
 #
-#  id                 :integer          not null, primary key
-#  project_id         :integer
-#  photo_file_name    :string(255)
-#  photo_content_type :string(255)
-#  photo_file_size    :integer
-#  photo_updated_at   :datetime
-#  created_at         :datetime
-#  updated_at         :datetime
-#  user_id            :integer
+#  id                :integer          not null, primary key
+#  in_user_id        :integer
+#  out_user_id       :integer
+#  in_user_accepted  :boolean          default(FALSE)
+#  out_user_accepted :boolean          default(FALSE)
+#  created_at        :datetime
+#  updated_at        :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

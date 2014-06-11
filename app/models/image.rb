@@ -10,6 +10,7 @@
 #  photo_updated_at   :datetime
 #  created_at         :datetime
 #  updated_at         :datetime
+#  user_id            :integer
 #
 
 class Image < ActiveRecord::Base
@@ -17,4 +18,5 @@ class Image < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   
   belongs_to :project
+  belongs_to :user
 end

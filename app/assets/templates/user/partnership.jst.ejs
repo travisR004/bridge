@@ -1,0 +1,12 @@
+<h1>Manage Your Connections</h1>
+
+<div class="existing-partnerships">
+	<ul>
+		<% partners.forEach(function(partner){ %>
+			<li><%= partner.escape("first_name") %>  <%= partner.escape("last_name") %></li>
+		<% }) %>
+	</ul>
+</div>
+
+<div class="pending-partnerships">
+</div>

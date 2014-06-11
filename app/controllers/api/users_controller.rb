@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   before_action :require_login!, only: [:show, :update]
+  
   def create
     @user = User.new(user_params)
     @user.email = @user.email.downcase

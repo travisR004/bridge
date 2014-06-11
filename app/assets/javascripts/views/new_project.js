@@ -43,7 +43,11 @@ window.Bridge.Views.NewProject = Backbone.View.extend({
 		event.preventDefault();
 		var data = $(event.target).parent().parent().parent().parent().serializeJSON();
 		var project = new Bridge.Models.Project()
-		project.save(data)
+		project.save(data, {
+			success: function(resp){
+				Backbone.history.navigate("#profile", {trigger: true})
+			}
+		})
 	}
 	
 })
