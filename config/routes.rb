@@ -13,6 +13,7 @@ Bridge::Application.routes.draw do
     resources :skill_joins, only: [:create, :destroy]
     resources :projects, only: [:create, :show, :update, :destroy, :index]
     resources :partnerships, only: [:index]
+    resources :pending_requests, only: [:index]
   end
   resource :session, only: [:new, :create, :destroy]
 end

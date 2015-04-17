@@ -54,9 +54,14 @@ window.Bridge.Routers.AppRouter = Backbone.Router.extend({
 	
 	partnerships: function(){
 		if(currentUserId){
+			var pendingRequests = new Bridge.Collections.PendingRequests();
 			var partners = new Bridge.Collections.Partnerships();
-			var partnershipView = new Bridge.Views.Partnership({collection: partners});
+			var partnershipView = new Bridge.Views.Partnership({
+					collection: partners,
+					pendingRequests: pendingRequests
+				});
 			partners.fetch();
+			pendingRequests.fetch();
 			this._swapView(partnershipView);
 		} else {
 			this.index();

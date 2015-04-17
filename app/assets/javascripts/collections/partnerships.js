@@ -3,7 +3,7 @@ window.Bridge.Collections.Partnerships = Backbone.Collection.extend({
 	
 	getOrFetch: function(id){
     var model;
-    var partnership = this;
+    var partnerships = this;
 
     if(model = partnerhips.get(id)){
       model.fetch();

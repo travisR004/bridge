@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   has_many :projects
   has_many :partnerships, foreign_key: :in_partner
   has_many :partners, through: :partnerships
-  has_many :in_pending_requests, foreign_key: :in_user_id, class_name: "PendingReqeust"
+  has_many :in_pending_requests, foreign_key: :in_user_id, class_name: "PendingRequest"
   has_many :out_pending_requests, foreign_key: :out_user_id, class_name: "PendingRequest"
   
   def password=(pt)

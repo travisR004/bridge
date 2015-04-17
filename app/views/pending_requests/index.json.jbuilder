@@ -1,0 +1,1 @@
+json.partial!("pending_requests/requests", pending_requests: @pending_requests)
